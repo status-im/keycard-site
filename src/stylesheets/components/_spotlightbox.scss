@@ -1,0 +1,30 @@
+.c-spotlightbox {
+  padding: get-inset-spacing(l) 0;
+  border-radius: $global-border-radius;
+  background: url(../images/circles-background-dark.png) no-repeat bottom center;
+  background-color: get-color(blue);
+  color: get-color(unique, white);
+
+  @include respond(large) {
+    padding: get-inset-spacing(xl) 0;
+  }
+
+  a {
+    color: get-color(blue, lighter);
+
+    &:hover {
+      color: get-brand(primary);
+    }
+  }
+
+  &__item {
+    height: 100%;
+    padding: get-inset-spacing(m);
+    border-radius: $global-border-radius;
+    background: get-color(blue, light);
+  }
+  &__hint {
+    color: get-color(blue, lighter);
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,13 @@
+.o-teaser {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+
+  &__symbol {
+    width: 48px;
+  }
+
+  &__content {
+    padding-left: get-inline-spacing(l);
+  }
+}

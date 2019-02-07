@@ -1,0 +1,161 @@
+$mobile-first: true !default;
+
+/// Color Scheme
+/// The global colors for this project
+/// @group Colors
+$colorscheme: (
+  unique: (
+    black: #000,
+    white: #fff
+  ),
+  green: (
+    lighter: #EAFAEF,
+    base: #09D9B9
+  ),
+  gray: (
+    lightest: #F5F6FA,
+    darkest: #333,
+    base: #6C7992,
+  ),
+  blue: (
+    lighter: #6E7786,
+    light: #253148,
+    base: #0E1C36
+  )
+) !default;
+
+/// Brand Colors
+/// The typical brand colors
+/// @group Colors
+$brandColors: (
+  primary: get-color(green),
+  primaryGradation: get-color(green, lighter),
+  secondary: get-color(blue),
+  secondaryGradation: get-color(blue, light),
+) !default;
+
+$insetSpacing: (
+  xs: 4px,
+  s: 8px,
+  m: 16px,
+  l: 32px,
+  xl: 64px
+) !default;
+
+$insetSquishSpacing: (
+  s: 8px 4px,
+  m: 8px 16px,
+  l: 16px 24px
+) !default;
+
+$insetStretchSpacing: (
+  s: 12px 8px,
+  m: 24px 16px
+) !default;
+
+$stackSpacing: (
+  xxs: 2px,
+  xs: 4px,
+  s: 8px,
+  m: 16px,
+  l: 32px,
+  xl: 64px
+) !default;
+
+$inlineSpacing: (
+  xxs: 2px,
+  xs: 4px,
+  s: 8px,
+  m: 16px,
+  l: 32px,
+  xl: 64px
+) !default;
+
+/// Notification Colors
+/// Different types of notifications
+/// @group Colors
+$semanticColors: (
+  errorLight: #FDE0E0,
+  error: #F46363,
+  successLight: #E8F5DA,
+  success: #69a22b,
+  warningLight: #FFF6E9,
+  warning: #ff9900,
+  positive: #8CCE44,
+  negative: #F46363
+) !default;
+
+$layoutColors: (
+  quite: get-color(gray, lightest),
+  spotlight: get-brand(secondary),
+  accent: get-brand(primary)
+) !default;
+
+/// Social Media Colors
+/// The colors of some social networks
+/// @group Colors
+$socialMediaColors: (
+  instagram: #000,
+  facebook: #4266b3,
+  youtube: #ff0001,
+  twitter: #1da1f2
+) !default;
+
+/// Default Font Settings
+/// Global font settings like colors, families, size, etc.
+/// @group Fonts
+$fontSettings: (
+  color: get-color(gray, darkest),
+  baseFamily: (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+  headingFamily: (Roboto, Helvetica, sans-serif),
+  size: 19px
+) !default;
+
+/// Typography
+
+/// Breakpoints
+/// Different sizes to create breakpoints
+/// @group Layout
+$breakpoints: (
+  small: 480px,
+  medium: 600px,
+  large: 767px,
+  xLarge: 1023px,
+) !default;
+
+/// Indecies
+/// The global map to show all indecies to handle a solid layer architecture
+$indecies: (
+  navigationList: 10
+) !default;
+
+/// Global Space between components
+/// @group Layout
+$component-space: get-spacing(large);
+$container-space: get-spacing(x-large);
+$max-wrapper-width: 1200px !default;
+$max-wrapper-width-medium: 720px !default;
+$max-cols: 12 !default;
+$gutter-width: get-inline-spacing(m) !default;
+$prevent-spacing: get-inset-spacing(m) !default;
+
+/// Standard Border Radius
+/// @type String
+/// @group Border
+$global-border-radius: 3px !default;
+
+/// Rounded Border Radius
+/// @type String
+/// @group Border
+$global-rounded-border-radius: 250px !default;
+
+/// Standard Border Color
+/// @type Color
+/// @group Border
+$global-border-color: get-color(gray) !default;
+
+/// Link Color
+/// @type Color
+$global-link-color: get-brand(primary) !default;
+
+$form-gutter: get-stack-spacing(m) !default;

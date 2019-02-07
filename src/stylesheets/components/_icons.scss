@@ -1,0 +1,10 @@
+.icon {
+  height: 48px;
+  width: 48px;
+  fill: get-brand(primary);
+
+  &--small {
+    height: 32px;
+    width: 32px;
+  }
+}

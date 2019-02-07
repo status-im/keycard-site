@@ -1,0 +1,44 @@
+.a-button {
+  display: inline-block;
+  padding: get-inset-squish-spacing(l);
+  vertical-align: top;
+  border: 2px solid transparent;
+  border-radius: $global-border-radius;
+  background: linear-gradient(256.69deg, #0FF2D6 -11.72%, rgba(0, 187, 158, 0) 199.22%), #09D9B9;
+  color: get-color(unique, white);
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+
+  &:hover {
+    border-color: get-brand(primary);
+    background: transparent;
+    color: get-brand(primary);
+  }
+
+  // Ghost Button
+  &--ghost {
+    background: linear-gradient(259.27deg, rgba(255, 255, 255, 0.6) -11.72%, rgba(220, 222, 234, 0.6) 199.22%), #B9BCCB;;
+    color: get-color(gray);
+
+    &:hover {
+
+    }
+  }
+
+  // Negative
+  &--negative {
+    background: get-color(unique, white);
+    color: get-brand(primary);
+
+    &:hover {
+      border-color: get-color(unique, white);
+      background: transparent;
+      color: get-color(unique, white);
+    }
+  }
+
+  &--rounded {
+    border-radius: $global-rounded-border-radius;
+  }
+}

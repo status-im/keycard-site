@@ -1,0 +1,45 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: get-stack-spacing(m) 0 0;
+  font-family: get-font(headingFamily);
+  line-height: 1.2;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  + p {
+    margin-top: get-stack-spacing(m);
+  }
+}
+
+.h6 {
+  font-size: get-font(size);
+  font-weight: bold;
+}
+
+.a-subtitle {
+  color: get-color(gray);
+  font-size: 2.2rem;
+}
+
+.a-paragraph {
+  font-size: get-font(size);
+}
+
+.a-title {
+  font-size: 3.4rem;
+  font-weight: normal;
+
+  @include respond(medium) {
+    font-size: 4.2rem;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+}
