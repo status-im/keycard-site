@@ -45,8 +45,6 @@ select {
   font-family: get-font(baseFamily);
   font-size: get-font(size);
   line-height: 1;
-  -webkit-appearance: none;
-          appearance: none;
 
   &:placeholder {
     color: rgba(get-font(color), .3);
@@ -94,7 +92,7 @@ textarea {
 label {
   display: block;
   margin-top: $form-gutter;
-  font-size: get-font(size);
+  font-size: 16px;
   font-weight: bold;
   line-height: 1.2;
 
