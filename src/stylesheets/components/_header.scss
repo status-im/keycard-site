@@ -9,7 +9,7 @@
     justify-content: space-between;
 
     &--clone {
-      padding: get-inset-spacing(m);
+      padding: get-inset-spacing(s) get-inset-spacing(m);
       position: fixed;
       z-index: 100;
       top: 0;

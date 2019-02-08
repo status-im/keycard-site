@@ -21,6 +21,10 @@
     fill: #fff;
   }
 
+  a .icon:hover {
+    opacity: .6;
+  }
+
   &__item {
     height: 100%;
     padding: get-inset-spacing(m);
