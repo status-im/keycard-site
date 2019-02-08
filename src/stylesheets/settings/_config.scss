@@ -106,8 +106,8 @@ $socialMediaColors: (
 /// @group Fonts
 $fontSettings: (
   color: get-color(gray, darkest),
-  baseFamily: (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
-  headingFamily: (Roboto, Helvetica, sans-serif),
+  baseFamily: (-apple-system, BlinkMacSystemFont, "Segoe UI", 'Roboto', Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+  headingFamily: ('Roboto', Helvetica, sans-serif),
   size: 18px
 ) !default;
 

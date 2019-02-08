@@ -1,13 +1,22 @@
 .o-teaser {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: no-wrap;
+
+  @include respond(small) {
+    flex-direction: row;
+  }
 
   &__symbol {
     width: 48px;
   }
 
   &__content {
-    padding-left: get-inline-spacing(l);
+    margin-top: get-stack-spacing(s);
+
+    @include respond(small) {
+      margin-top: 0;
+      padding-left: get-inline-spacing(l);
+    }
   }
 }

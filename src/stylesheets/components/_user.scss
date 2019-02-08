@@ -4,6 +4,7 @@
   text-align: center;
 
   &__avatar {
+    max-width: 125px;
     border-radius: $global-rounded-border-radius;
   }
 

@@ -9,6 +9,21 @@
       margin-left: get-inline-spacing(l);
       margin-top: 0;
     }
+
+    &.is-active {
+      position: relative;
+
+      &:before {
+        content: '';
+        display: block;
+        bottom: -3px;
+        height: 3px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        background: get-brand(primary);
+      }
+    }
   }
 
   &__close {
