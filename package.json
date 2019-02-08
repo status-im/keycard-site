@@ -83,6 +83,7 @@
     "dploy": "^1.2.0",
     "enquirer": "^2.2.0",
     "figlet": "^1.2.1",
+    "headhesive": "^1.2.4",
     "jquery": "^3.3.1",
     "normalize.css": "^8.0.1",
     "reset-css": "^4.0.1",

@@ -15,6 +15,7 @@ $colorscheme: (
   gray: (
     lightest: #F5F6FA,
     darkest: #333,
+    medium: #ccc,
     base: #6C7992,
   ),
   blue: (
@@ -152,7 +153,7 @@ $global-rounded-border-radius: 250px !default;
 /// Standard Border Color
 /// @type Color
 /// @group Border
-$global-border-color: get-color(gray) !default;
+$global-border-color: get-color(gray, medium) !default;
 
 /// Link Color
 /// @type Color
