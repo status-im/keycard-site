@@ -1,4 +1,5 @@
 .c-accentbox {
+  overflow: hidden;
   padding: get-inset-spacing(l) 0;
   border-radius: $global-border-radius;
   background: get-brand(primary);

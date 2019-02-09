@@ -3,10 +3,17 @@
   border-radius: $global-border-radius;
   background: url(../images/circles-background-dark.png) no-repeat bottom center;
   background-color: get-color(blue);
+  background-size: 100%;
+  transition: background-size .5s;
+  transition-delay: .5s;
   color: get-color(unique, white);
 
   @include respond(large) {
     padding: get-inset-spacing(xl) 0;
+  }
+
+  &.is-active {
+    background-size: 150%;
   }
 
   a {

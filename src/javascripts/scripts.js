@@ -1,4 +1,12 @@
 $(document).ready(function() {
+
+  $(window).scroll(function() {
+    $('.js-inviewport-item').isInViewport({
+      tolerance: 0
+    })
+    .addClass('is-active');
+  });
+
   var options = {
             classes: {
                 clone:   'o-header__top--clone',
@@ -20,6 +28,8 @@ $(document).ready(function() {
 
     $('.js-navigation-list').removeClass('is-active');
   });
+
+  $('.js-header-keyvisual').addClass('is-active');
 
   // Popup
   $('.js-popup').magnificPopup({
