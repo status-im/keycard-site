@@ -29,12 +29,10 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.config.js",
     "start:dist": "cross-env NODE_ENV=production webpack-dev-server --config ./config/webpack.config.js && http-server ./dist -o",
-    "setup": "node ./config/site.setup.js",
-    "postinstall": "node ./config/site.setup.js",
     "lint:js": "./node_modules/.bin/eslint \"src/**/*.js\"",
     "lint:styles": "stylelint \"src/**/*.scss\"",
     "build:dist": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js",
-    "deploy": "dploy"
+    "deploy": "node bin/gh-pages.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -83,6 +81,7 @@
     "dploy": "^1.2.0",
     "enquirer": "^2.2.0",
     "figlet": "^1.2.1",
+    "gh-pages": "^2.0.1",
     "headhesive": "^1.2.4",
     "jquery": "^3.3.1",
     "normalize.css": "^8.0.1",
