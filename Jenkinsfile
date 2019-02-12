@@ -1,0 +1,57 @@
+pipeline {
+  agent { label 'linux' }
+
+  options {
+    disableConcurrentBuilds()
+    /* manage how many builds we keep */
+    buildDiscarder(logRotator(
+      numToKeepStr: '20',
+      daysToKeepStr: '30',
+    ))
+  }
+
+  environment {
+    DEV_HOST = 'jenkins@node-01.do-ams3.proxy.misc.statusim.net'
+    GIT_USER = 'status-im-auto'
+    GIT_MAIL = 'auto@status.im'
+  }
+
+  stages {
+    stage('Git Prep') {
+      steps {
+        sh "git config user.name ${env.GIT_USER}"
+        sh "git config user.email ${env.GIT_MAIL}"
+      }
+    }
+
+    stage('Install Deps') {
+      steps {
+        sh 'yarn install --ignore-optional'
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh 'yarn run build:dist'
+      }
+    }
+
+    stage('Publish Prod') {
+      when { expression { env.GIT_BRANCH ==~ /.*master/ } }
+      steps {
+        sshagent(credentials: ['status-im-auto-ssh']) {
+          sh 'yarn run deploy'
+        }
+      }
+    }
+
+    stage('Publish Devel') {
+      when { expression { env.GIT_BRANCH ==~ /.*develop/ } }
+      steps {
+        sshagent(credentials: ['jenkins-ssh']) {
+          sh "scp -o StrictHostKeyChecking=no -r dist/* ${env.DEV_HOST}:/var/www/dev-keycard/"
+        }
+      }
+    }
+  }
+}
