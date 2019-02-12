@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://keycard.status.im/sitemap.xml
+Host: https://keycard.status.im
