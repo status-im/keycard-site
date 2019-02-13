@@ -39,7 +39,10 @@ pipeline {
     stage('Publish Prod') {
       when { expression { env.GIT_BRANCH ==~ /.*master/ } }
       steps {
-        sshagent(credentials: ['status-im-auto-ssh']) {
+        withCredentials([string(
+          credentialsId: 'jenkins-github-token',
+          variable: 'GH_TOKEN',
+        )]) {
           sh 'yarn run deploy'
         }
       }
