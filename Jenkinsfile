@@ -12,15 +12,15 @@ pipeline {
 
   environment {
     DEV_HOST = 'jenkins@node-01.do-ams3.proxy.misc.statusim.net'
-    GIT_USER = 'status-im-auto'
-    GIT_MAIL = 'auto@status.im'
+    GH_USER = 'status-im-auto'
+    GH_MAIL = 'auto@status.im'
   }
 
   stages {
     stage('Git Prep') {
       steps {
-        sh "git config user.name ${env.GIT_USER}"
-        sh "git config user.email ${env.GIT_MAIL}"
+        sh "git config user.name ${env.GH_USER}"
+        sh "git config user.email ${env.GH_MAIL}"
       }
     }
 
