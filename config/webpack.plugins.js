@@ -12,8 +12,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const config = require('./site.config');
+
+// Copy Static files
+const copy = new CopyWebpackPlugin([{
+  from: path.join(config.root, config.paths.src, 'static'),
+  to: path.join(config.root, config.paths.dist),
+}])
 
 // Hot module replacement
 const hmr = new webpack.HotModuleReplacementPlugin();
@@ -127,6 +134,7 @@ const google = new GoogleAnalyticsPlugin({
 
 module.exports = [
   clean,
+  copy,
   cssExtract,
   ...generateHTMLPlugins(),
   fs.existsSync(config.favicon) && favicons,
