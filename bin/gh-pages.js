@@ -11,5 +11,8 @@ ghpages.publish('dist', {
   dotfiles: true,
   silent: false
 }, function(err) {
-  if (err !== undefined) { console.error(err) }
+  if (err !== undefined) {
+    console.error(err)
+    throw err
+  }
 })
