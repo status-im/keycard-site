@@ -8,7 +8,12 @@
   }
 
   &__symbol {
-    width: 48px;
+    display: block;
+    width: 100%;
+
+    @include respond(small) {
+      width: 48px;
+    }
   }
 
   &__content {
