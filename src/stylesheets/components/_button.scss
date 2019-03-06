@@ -3,6 +3,7 @@
   display: inline-block;
   padding: get-inset-squish-spacing(l);
   vertical-align: top;
+  -webkit-appearance: none;
   border: 2px solid transparent;
   border-radius: $global-border-radius;
   background: linear-gradient(256.69deg, #0FF2D6 -11.72%, rgba(0, 187, 158, 0) 199.22%), #09D9B9;
