@@ -1,0 +1,37 @@
+// Compiled by ClojureScript 1.10.520 {:static-fns true, :optimize-constants true}
+goog.provide('status_im.colors');
+goog.require('cljs.core');
+goog.require('cljs.core.constants');
+goog.require('clojure.string');
+status_im.colors.alpha = (function status_im$colors$alpha(hex,opacity){
+var hex__$1 = clojure.string.replace(hex,/#/,"");
+var r = parseInt(cljs.core.subs.cljs$core$IFn$_invoke$arity$3(hex__$1,(0),(2)),(16));
+var g = parseInt(cljs.core.subs.cljs$core$IFn$_invoke$arity$3(hex__$1,(2),(4)),(16));
+var b = parseInt(cljs.core.subs.cljs$core$IFn$_invoke$arity$3(hex__$1,(4),(6)),(16));
+return ["rgba(",cljs.core.str.cljs$core$IFn$_invoke$arity$1(r),",",cljs.core.str.cljs$core$IFn$_invoke$arity$1(g),",",cljs.core.str.cljs$core$IFn$_invoke$arity$1(b),",",cljs.core.str.cljs$core$IFn$_invoke$arity$1(opacity),")"].join('');
+});
+status_im.colors.transparent = "transparent";
+status_im.colors.white = "#ffffff";
+status_im.colors.white_light_transparent = status_im.colors.alpha(status_im.colors.white,0.1);
+status_im.colors.white_transparent = status_im.colors.alpha(status_im.colors.white,0.4);
+status_im.colors.wild_blue_yonder = status_im.colors.white_transparent;
+status_im.colors.red_light = "#ffe5ea";
+status_im.colors.tooltip_green = "#e9f6e6";
+status_im.colors.black = "#000000";
+status_im.colors.black_transparent = status_im.colors.alpha(status_im.colors.black,0.1);
+status_im.colors.black_transparent_40 = status_im.colors.alpha(status_im.colors.black,0.4);
+status_im.colors.gray_light = status_im.colors.black_transparent;
+status_im.colors.gray = "#939ba1";
+status_im.colors.gray_transparent_40 = status_im.colors.alpha(status_im.colors.gray,0.4);
+status_im.colors.gray_lighter = "#eef2f5";
+status_im.colors.blue = "#4360df";
+status_im.colors.blue_light = "#ECEFFC";
+status_im.colors.gray_background = status_im.colors.blue_light;
+status_im.colors.red = "#ff2d55";
+status_im.colors.red_transparent_10 = status_im.colors.alpha(status_im.colors.red,0.1);
+status_im.colors.green = "#44d058";
+status_im.colors.green_transparent_10 = status_im.colors.alpha(status_im.colors.green,0.1);
+status_im.colors.chat_colors = new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, ["#fa6565","#7cda00","#887af9","#51d0f0","#fe8f59","#d37ef4"], null);
+status_im.colors.text = status_im.colors.black;
+status_im.colors.text_gray = status_im.colors.gray;
+status_im.colors.default_chat_color = "#a187d5";

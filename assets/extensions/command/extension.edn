@@ -1,0 +1,42 @@
+{meta {:name          "Gfycat improved"
+       :description   "Send images from gfycat"
+       :documentation ""}
+
+ views/preview
+      (let [{{{uri :gif-uri} :params} :content} properties]
+        [image {:uri uri :style {:width 150 :height 150}}])
+
+ views/short-preview
+      (let [{{{uri :uri} :params} :content} properties]
+        [image {:uri uri :style {:width 20 :height 20}}])
+
+ events/on-giphy-result
+      (let [{{value :gfycats} :body} properties]
+        [store/put {:key "images" :value value}])
+
+ events/search-giphy
+      (let [{search :value} properties]
+        [http/get {:url        "https://api.gfycat.com/v1/stickers/search?count=10&search_text=${search}"
+                   :on-success [on-giphy-result]
+                   :on-failure [alert]}])
+
+ views/gif-selector
+      (let [images [store/get {:key "images"}]]
+        [view
+         [input {:style {:margin 10} :placeholder "Start typing here to find a gif" :on-change [search-giphy]}]
+         [scroll-view {:horizontal true :keyboard-should-persist-taps :always
+                       :style      {:margin 10}}
+          (for [{url :mobilePosterUrl gif-url :gifUrl id :gfyId} images]
+            [touchable-opacity {:on-press [chat.command/set-parameter-with-custom-params {:value id :params {:uri url :gif-uri gif-url}}]}
+             [view {:style {:flex-direction :row}}
+              [image {:uri gif-url :style {:width 50 :height 50}}]]])]])
+
+ hooks/chat.command.gfycat-new
+      {:description   "Send a gif"
+       :scope         #{:personal-chats :public-chats}
+       :preview       [preview]
+       :short-preview [short-preview]
+       :parameters    [{:id          :id
+                        :type        :text
+                        :placeholder "Gif id"
+                        :suggestions [gif-selector]}]}}

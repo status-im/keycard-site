@@ -1,0 +1,1 @@
+{:optimizations :advanced, :output-dir "resources/public/js/compiled", :output-to "resources/public/js/compiled/app.js", :main pluto.playground.core, :aot-cache true}
