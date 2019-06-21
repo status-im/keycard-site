@@ -1,0 +1,12 @@
+menu:
+  Warum: '#why'
+  Features: '#features'
+  Security: '#security'
+  Keycard API: '#keycard-api'
+  About us: /de/about-us
+
+header:
+  title: Sicher, Kontaktlos, Open Source Geldbörse
+  button:
+    primary: Keycard erhalten
+    secondary: Dokumentation ansehen

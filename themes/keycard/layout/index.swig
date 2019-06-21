@@ -11,7 +11,7 @@
           <p class="a-subtitle">{{ __('home.block.ecosystem.subtitle') }}</p>
         </div>
         <div class="o-grid__column-1-1 o-grid__column-large-3-5 o-grid__column-large-offset">
-          <img src="images/ecosystem-keyvisual.svg" alt="" class="js-inviewport-item a-push-top">
+          <img src="{{url_for('images/ecosystem-keyvisual.svg')}}" alt="" class="js-inviewport-item a-push-top">
         </div>
       </div>
     </div>
@@ -141,9 +141,9 @@
         </div>
         <div class="o-grid">
           <div class="o-grid__column-1-1 o-grid__column-large-1-2">
-            <img src="images/security-keyvisual.svg" alt="" class="js-inviewport-item a-zoom">
+            <img src="{{url_for('images/security-keyvisual.svg')}}" alt="" class="js-inviewport-item a-zoom">
             <div class="o-center">
-              <a href="https://status.im/keycard_api/" title="See the docs" class="a-button">See the Docs</a>
+              <a href="https://status.im/keycard_api/" title="{{ __('home.block.security.button') }}" class="a-button">{{ __('home.block.security.button') }}</a>
             </div>
           </div>
           <div class="o-grid__column-1-1 o-grid__column-large-1-2">
@@ -189,7 +189,7 @@
             </div>
           </div>
           <div class="o-grid__column-1-1 o-grid__column-large-1-2">
-            <img src="images/open-source-keyvisual.svg" alt="" class="js-inviewport-item a-push-top">
+            <img src="{{url_for('images/open-source-keyvisual.svg')}}" alt="" class="js-inviewport-item a-push-top">
           </div>
         </div>
       </div>

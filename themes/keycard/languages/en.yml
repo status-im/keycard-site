@@ -1,10 +1,11 @@
 menu:
-  why: Why
-  features: Features
-  security: Security
-  api: Keycard API
-  about: About us
-  button: Get my Keycard
+  Why: '#why'
+  Features: '#features'
+  Security: '#security'
+  Keycard API: '#keycard-api'
+  About us: /about-us
+
+menubutton: Get Keycard
 
 header:
   title: Secure, Contactless, Open Source Hardwallet
@@ -71,6 +72,7 @@ home:
     security:
       title: Built for <strong>Security</strong>
       subtitle: Keycard is designed to safely store your private keys offline in an air-gapped environment. They never leave the secure element of the card and are always kept offline.
+      button: See the Docs
       itemA:
         title: Keycard hardware security is compliant with the most stringent standard (Common Criteria EAL5+) . No one will be able to access private keys even if the card is stolen.
       itemB:

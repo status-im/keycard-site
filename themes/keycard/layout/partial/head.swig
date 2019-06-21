@@ -9,15 +9,15 @@
 
   <!-- Icon -->
   <meta name="msapplication-TileColor" content="#080E1A">
-  <link rel="icon" type="image/png" href="{{ url_for('assets/images/favicon-16.png') }}" sizes="16x16" />
-  <link rel="icon" type="image/png" href="{{ url_for('assets/images/favicon-32.png') }}" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{{ url_for('images/favicon-16.png') }}" sizes="16x16" />
+  <link rel="icon" type="image/png" href="{{ url_for('images/favicon-32.png') }}" sizes="32x32" />
 
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('assets/images/apple-touch-icon-60x60-precomposed.png') }}">
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('assets/images/apple-touch-icon-76x76-precomposed.png') }}">
-  <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('assets/images/apple-touch-icon-120x120-precomposed.png') }}">
-  <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('assets/images/apple-touch-icon-152x152-precomposed.png') }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('assets/images/apple-touch-icon-precomposed.png') }}">
-  <link rel="apple-touch-icon" href="{{ url_for('assets/images/apple-touch-icon-precomposed.png') }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('images/apple-touch-icon-60x60-precomposed.png') }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('images/apple-touch-icon-76x76-precomposed.png') }}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('images/apple-touch-icon-120x120-precomposed.png') }}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('images/apple-touch-icon-152x152-precomposed.png') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('images/apple-touch-icon-precomposed.png') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('images/apple-touch-icon-precomposed.png') }}">
   <!-- CSS -->
   {{ css('css/application.css') }}
   <!-- endbuild -->
@@ -27,3 +27,4 @@
   <meta property="og:image" content="/img/share.png?v=0.0.5" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.4/styles/dracula.min.css">
 </head>
+<body>

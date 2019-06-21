@@ -4,40 +4,33 @@
 
 # Site
 title: Keycard
-subtitle:
-description: Secure, Contactless, Open Source Hardwallet
+description: Keycard is a new type of smartcard built with an open API for simple integration with crypto wallets and hardware. Designed to safely send, store, and receive cryptocurrencies in a seamless contactless experience.
 author: Status Research & Development GmbH
 language:
-- default
-- de
+  - en
+  - de
+
+i18n_dir: :lang
+menu:
+  Why: '#why'
+  Features: '#features'
+  Security: '#security'
+  Keycard API: '#keycard-api'
+  About us: /de/about-us
+
+menubutton: Get Keycard
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://keycard.status.im/
 root: /
 permalink: :year/:month/:day/:title/
-permalink_defaults:
-  lang: en
-
-# Directory
-source_dir: source
-public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
-code_dir: downloads/code
-i18n_dir: :lang
-skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
-titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
-filename_case: 0
 render_drafts: false
-post_asset_folder: false
-relative_link: false
+post_asset_folder: true
 future: true
 highlight:
   enable: true
