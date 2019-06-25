@@ -7,7 +7,7 @@ title: Keycard
 description: Keycard is a new type of smartcard built with an open API for simple integration with crypto wallets and hardware. Designed to safely send, store, and receive cryptocurrencies in a seamless contactless experience.
 author: Status Research & Development GmbH
 
-language: [en]
+language: [en, de]
 locale: en
 i18n:
   type: [page, post]
