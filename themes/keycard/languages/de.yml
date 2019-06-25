@@ -1,11 +1,16 @@
-menu:
-  Warum: '#why'
-  Features: '#features'
-  Security: '#security'
-  Keycard API: '#keycard-api'
-  About us: /de/about-us
-
 header:
+  menu:
+    why:
+      title: Warum
+    features:
+      title: Features
+    security:
+      title: Sicherheit
+    keycard:
+      title: Keycard API
+    about:
+      title: Über uns
+
   title: Sicher, Kontaktlos, Open Source Geldbörse
   button:
     primary: Keycard erhalten

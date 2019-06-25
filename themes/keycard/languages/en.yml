@@ -1,13 +1,18 @@
-menu:
-  Why: '#why'
-  Features: '#features'
-  Security: '#security'
-  Keycard API: '#keycard-api'
-  About us: /about-us
-
 menubutton: Get Keycard
 
 header:
+  menu:
+    why:
+      title: Why
+    features:
+      title: Features
+    security:
+      title: Security
+    keycard:
+      title: Keycard API
+    about:
+      title: About us
+
   title: Secure, Contactless, Open Source Hardwallet
   subtitle: Keycard is a new type of smartcard built with an open API for simple integration with crypto wallets and hardware. Designed to safely send, store, and receive cryptocurrencies in a seamless contactless experience.
   button:
