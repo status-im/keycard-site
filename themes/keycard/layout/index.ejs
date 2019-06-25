@@ -11,7 +11,7 @@
           <p class="a-subtitle"><%- __('home.block.ecosystem.subtitle') %></p>
         </div>
         <div class="o-grid__column-1-1 o-grid__column-large-3-5 o-grid__column-large-offset">
-          <img src="<%=url_for('images/ecosystem-keyvisual.svg')%>" alt="" class="js-inviewport-item a-push-top">
+          <%- image_tag("images/ecosystem-keyvisual.svg", { class: 'js-inviewport-item a-push-top' }) %>
         </div>
       </div>
     </div>
@@ -141,7 +141,7 @@
         </div>
         <div class="o-grid">
           <div class="o-grid__column-1-1 o-grid__column-large-1-2">
-            <img src="<%=url_for('images/security-keyvisual.svg')%>" alt="" class="js-inviewport-item a-zoom">
+            <%- image_tag("images/security-keyvisual.svg", { class: 'js-inviewport-item a-zoom' }) %>
             <div class="o-center">
               <a href="https://status.im/keycard_api/" title="<%= __('home.block.security.button') %>" class="a-button"><%= __('home.block.security.button') %></a>
             </div>
@@ -189,7 +189,7 @@
             </div>
           </div>
           <div class="o-grid__column-1-1 o-grid__column-large-1-2">
-            <img src="<%= url_for('images/open-source-keyvisual.svg')%>" alt="" class="js-inviewport-item a-push-top">
+            <%- image_tag("images/open-source-keyvisual.svg", { class: 'js-inviewport-item a-push-top' }) %>
           </div>
         </div>
       </div>
