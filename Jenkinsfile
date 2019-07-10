@@ -32,12 +32,12 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'yarn run build:dist'
+        sh 'yarn run build'
       }
     }
 
     stage('Publish Prod') {
-      when { expression { env.GIT_BRANCH ==~ /.*master/ } }
+      when { expression { GIT_BRANCH.endsWith("master") } }
       steps {
         withCredentials([string(
           credentialsId: 'jenkins-github-token',
@@ -49,10 +49,13 @@ pipeline {
     }
 
     stage('Publish Devel') {
-      when { expression { env.GIT_BRANCH ==~ /.*develop/ } }
+      when { expression { !GIT_BRANCH.endsWith("master") } }
       steps {
         sshagent(credentials: ['jenkins-ssh']) {
-          sh "scp -o StrictHostKeyChecking=no -r dist/* ${env.DEV_HOST}:/var/www/dev-keycard/"
+          sh """
+            rsync -e 'ssh -o StrictHostKeyChecking=no' -r --delete \
+              public/* ${env.DEV_HOST}:/var/www/dev-keycard/
+          """
         }
       }
     }

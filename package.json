@@ -5,6 +5,10 @@
   "hexo": {
     "version": "3.9.0"
   },
+  "scripts": {
+    "build": "hexo generate",
+    "deploy": "node bin/gh-pages.js"
+  },
   "dependencies": {
     "hexo": "^3.8.0",
     "hexo-autoprefixer": "^2.0.0",
