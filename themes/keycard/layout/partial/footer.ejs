@@ -53,7 +53,7 @@
         <div class="o-grid__column-1-2 o-grid__column-large-1-4 o-grid__column-xlarge-1-5">
           <p class="h6"><%= __('footer.about.title') %></p>
           <ul class="o-list">
-            <li><a href="/about-us" target="_blank" title="<%= __('footer.about.links.team') %>"><%= __('footer.about.links.team') %></a></li>
+            <li><a href="<%- url_for_lang('about-us') %>" target="_blank" title="<%= __('footer.about.links.team') %>"><%= __('footer.about.links.team') %></a></li>
             <li><a href="" title="<%= __('footer.about.links.opensource') %>" target="_blank"><%= __('footer.about.links.opensource') %></a></li>
           </ul>
         </div>
@@ -79,7 +79,7 @@
           <div class="o-grid__column-1-1 o-grid__column-xlarge-4-5">
             <p class="o-vertical-alignment">
               <span class="o-vertical-alignment__item"><%= __('footer.bottomtext') %></span>
-              <img src="images/status-logo.svg" alt="Status" class="o-vertical-alignment__item">
+              <%- image_tag("images/status-logo.svg", { class: 'o-vertical-alignment__item' }) %>
             </p>
           </div>
         </div>
