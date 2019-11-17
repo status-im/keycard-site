@@ -5,7 +5,7 @@ ghpages.publish('dist', {
     'https://'
     + process.env.GH_USER + ':'
     + process.env.GH_TOKEN
-    + '@github.com/status-im/keycard.status.im.git'
+    + '@github.com/status-im/keycard-site.git'
   ),
   branch: 'gh-pages',
   dotfiles: true,

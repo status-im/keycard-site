@@ -9,13 +9,13 @@ if (!ROOT) {
 
 const config = {
   // Your website's name, used for favicon meta tags
-  site_name: '#keycard.status.im',
+  site_name: '#keycard.tech',
 
   // Your website's description, used for favicon meta tags
   site_description: 'Secure, Contactless, Open Source Hardwallet',
 
   // Your website's URL, used for sitemap
-  site_url: 'https://keycard.status.im',
+  site_url: 'https://keycard.tech',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',
