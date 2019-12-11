@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Keycard
+title: Keycard - Secure, Contactless, Open Source, Crypto Hardwallet
 description: Keycard is a new type of smartcard built with an open API for simple integration with crypto wallets and hardware. Designed to safely send, store, and receive cryptocurrencies in a seamless contactless experience.
 author: Status Research & Development GmbH
 
@@ -14,19 +14,6 @@ i18n:
 permalink_defaults:
   lang: en
 i18n_dir: :lang
-
-header:
-  menu:
-    why:
-      title: Why
-    features:
-      title: Features
-    security:
-      title: Security
-    keycard:
-      title: Keycard API
-    about:
-      title: About us
 
 menubutton: Get Keycard
 
@@ -45,6 +32,14 @@ per_page: 0
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: keycard
+
+prism_plugin:
+  mode: 'preprocess'
+  theme: 'atom-dark'
+  line_number: false
+
+highlight:
+  enable: false
 
 autoprefixer:
   enable: true

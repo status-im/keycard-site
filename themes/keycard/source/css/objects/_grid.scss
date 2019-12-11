@@ -74,7 +74,6 @@
 
 [class*="o-grid__column-"],
 [class^="o-grid__column-"] {
-  flex: 1;
   margin-top: get-stack-spacing(l);
   padding-left: get-inline-spacing(l);
 }

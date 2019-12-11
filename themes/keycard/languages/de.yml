@@ -1,17 +1,11 @@
 header:
   menu:
-    why:
-      title: Warum
-    features:
-      title: Features
-    security:
-      title: Sicherheit
-    keycard:
-      title: Keycard API
+    docs:
+      title: Docs
     about:
-      title: Über uns
+      title: Ueber uns
 
-  title: Sicher, Kontaktlos, Open Source Geldbörse
+  title: Sicher, Kontaktlos, Open Source Geldboerse
   button:
     primary: Keycard erhalten
     secondary: Dokumentation ansehen

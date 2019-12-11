@@ -1,5 +1,5 @@
 <header role="banner" class="o-header">
-    <div class="c-whisperbox o-header__container js-inviewport-item">
+    <div class="c-whisperbox js-inviewport-item">
       <div class="o-constrained">
         <div class="o-header__top js-header">
           <div><a href="<%- show_lang() %>/" class="a-logo">Keycard</a></div>
@@ -12,12 +12,24 @@
               <a href="#" class="o-navigation__close js-navigation-close">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon"><title>close</title><path d="M14.3,12.179a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.442L12.177,9.7a.25.25,0,0,1-.354,0L2.561.442A1.5,1.5,0,0,0,.439,2.563L9.7,11.825a.25.25,0,0,1,0,.354L.439,21.442a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,0,0,2.122-2.121Z"/></svg>
               </a>
-              <a href="<%- url_for_lang('docs') %>" title="<%- __('header.menu.docs.title') %>"
-                class="o-navigation__item <% if(is_current('docs')) { %>is-active<% } %>">
-                <%- __('header.menu.docs.title') %>
+              <a href="<%- show_lang() %>/#why" title="<%- __('header.menu.why.title') %>"
+                class="js-anchor-scroll o-navigation__item">
+                <%- __('header.menu.why.title') %>
+              </a>
+              <a href="<%- show_lang() %>/#features" title="<%- __('header.menu.features.title') %>"
+                class="js-anchor-scroll o-navigation__item">
+                <%- __('header.menu.features.title') %>
+              </a>
+              <a href="<%- show_lang() %>/#security" title="<%- __('header.menu.security.title') %>"
+                class="js-anchor-scroll o-navigation__item">
+                <%- __('header.menu.security.title') %>
+              </a>
+              <a href="<%- show_lang() %>/#keycard-api" title="<%- __('header.menu.keycard.title') %>"
+                class="js-anchor-scroll o-navigation__item">
+                <%- __('header.menu.keycard.title') %>
               </a>
               <a href="<%- url_for_lang('about-us') %>" title="<%- __('header.menu.about.title') %>"
-                class="o-navigation__item <% if(is_current('about-us')) { %>is-active<% } %>">
+                class="o-navigation__item">
                 <%- __('header.menu.about.title') %>
               </a>
               <a href="https://getkeycard.status.im/" title="<%= __('menubutton') %>" class="o-navigation__item"><span class="a-button a-button--rounded"><%= __('menubutton') %></span></a>
@@ -25,28 +37,5 @@
           </nav>
         </div>
       </div>
-      <% if (page.layout == 'about-us' || is_home()) { %>
-        <div class="o-constrained">
-          <div class="o-header__body">
-            <div class="o-header__content">
-              <h1 class="a-title"><strong><%- __('header.title') %></strong></h1>
-              <p class="a-subtitle"><%- __('header.subtitle') %></p>
-              <div class="o-actionbar">
-                <div class="o-actionbar__item">
-                  <a href="https://getkeycard.status.im/" class="a-button" title="<%= __('header.button.primary') %>"><%= __('header.button.primary') %></a>
-                </div>
-                <div class="o-actionbar__item">
-                  <a href="<%- url_for_lang('docs') %>" class="a-button a-button--ghost"><%= __('header.button.secondary') %></a>
-                </div>
-              </div>
-            </div>
-            <div class="o-header__keyvisual js-header-keyvisual">
-              <img src="<%= url_for('images/card-dark.svg') %>" alt="">
-              <img src="<%= url_for('images/card-light.svg') %>" alt="">
-              <img src="<%= url_for('images/card-colored.svg') %>" alt="">
-            </div>
-          </div>
-        </div>
-      <% } %>
     </div>
   </header>

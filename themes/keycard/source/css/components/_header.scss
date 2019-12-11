@@ -3,6 +3,14 @@
   padding: get-inline-spacing(m) get-inline-spacing(m) get-inline-spacing(xl);
   border-radius: $global-border-radius;
 
+  &__container {
+    padding: get-inline-spacing(m);
+
+    @include respond(medium) {
+      padding: get-inline-spacing(l);
+    }
+  }
+
   &__top {
     align-items: center;
     display: flex;

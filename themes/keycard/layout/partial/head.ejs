@@ -1,5 +1,5 @@
-<head prefix="og: http://ogp.me/ns#">
-  <meta charset="utf-8">
+<head>
+  <meta charset="UTF-8">
   <title><% if (page.title) { %><%= __(page.title) %> | <% } %><%= __(config.title) %></title>
   <meta name="description" content="<% if (page.description) { %><%= __(page.description) %> | <% } %><%= __(config.description) %>">
   <meta http-equiv="X-UA-Compatible<% if (page.title) { %><%= __(page.title) %> | <% } %><%= __(config.title) %>" content="IE=Edge,chrome=1">
@@ -9,8 +9,7 @@
 
   <!-- Icon -->
   <meta name="msapplication-TileColor" content="#080E1A">
-  <link rel="icon" type="image/png" href="<%= url_for('images/favicon-16.png') %>" sizes="16x16" />
-  <link rel="icon" type="image/png" href="<%= url_for('images/favicon-32.png') %>" sizes="32x32" />
+  <link rel="icon" type="image/png" href="<%= url_for('images/favicon.png') %>" sizes="32x32" />
 
   <link rel="apple-touch-icon" sizes="76x76" href="<%= url_for('images/apple-touch-icon-60x60-precomposed.png') %>">
   <link rel="apple-touch-icon" sizes="76x76" href="<%= url_for('images/apple-touch-icon-76x76-precomposed.png') %>">

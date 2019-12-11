@@ -2,14 +2,8 @@ menubutton: Get Keycard
 
 header:
   menu:
-    why:
-      title: Why
-    features:
-      title: Features
-    security:
-      title: Security
-    keycard:
-      title: Keycard API
+    docs:
+      title: Docs
     about:
       title: About us
 
@@ -39,13 +33,6 @@ footer:
     links:
       contact: Contact us
       privacy: Privacy Policy
-
-  status:
-    title: Status Network
-    links:
-      status: Stauts
-      embark: Embark
-      nimbus: Nimbus
 
   bottomtext: We are part of the Status Network
 

@@ -1,4 +1,5 @@
-  <footer role="contentinfo" class="c-spotlightbox js-inviewport-item">
+<div class="o-row">
+<footer role="contentinfo" class="c-spotlightbox o-distance js-inviewport-item">
     <div class="o-constrained">
       <div class="o-grid">
         <div class="o-grid__column-1-1 o-grid__column-xlarge-1-5">
@@ -53,7 +54,7 @@
         <div class="o-grid__column-1-2 o-grid__column-large-1-4 o-grid__column-xlarge-1-5">
           <p class="h6"><%= __('footer.about.title') %></p>
           <ul class="o-list">
-            <li><a href="<%- url_for_lang('about-us') %>" target="_blank" title="<%= __('footer.about.links.team') %>"><%= __('footer.about.links.team') %></a></li>
+            <li><a href="<%- url_for_lang('about-us') %>" title="<%= __('footer.about.links.team') %>"><%= __('footer.about.links.team') %></a></li>
             <li><a href="" title="<%= __('footer.about.links.opensource') %>" target="_blank"><%= __('footer.about.links.opensource') %></a></li>
           </ul>
         </div>
@@ -65,11 +66,14 @@
           </ul>
         </div>
         <div class="o-grid__column-1-2 o-grid__column-large-1-4 o-grid__column-xlarge-1-5">
-          <p class="h6"><%= __('footer.status.title') %></p>
+          <p class="h6">The Status Network</p>
           <ul class="o-list">
-            <li><a href="https://status.im/" title="<%= __('footer.status.links.status') %>" target="_blank"><%= __('footer.status.links.status') %></a></li>
-            <li><a href="https://embark.status.im/" title="<%= __('footer.status.links.embark') %>" target="_blank"><%= __('footer.status.links.embark') %></a></li>
-            <li><a href="https://nimbus.status.im/" title="<%= __('footer.status.links.nimbus') %>" target="_blank"><%= __('footer.status.links.nimbus') %></a></li>
+            <li><a href="https://status.im/" title="<%= __('footer.status.links.status') %>" target="_blank">Status</a></li>
+            <li><a href="https://embark.status.im/" title="Embark" target="_blank">Embark</a></li>
+            <li><a href="https://nimbus.status.im/" title="Nimbus" target="_blank">Nimbus</a></li>
+            <li><a href="https://dap.ps/" title="dap.ps" target="_blank">dap.ps</a></li>
+            <li><a href="https://subspace.status.im/" title="Subspace" target="_blank">Subspace</a></li>
+            <li><a href="https://vac.dev/" title="Vac" target="_blank">Vac</a></li>
           </ul>
         </div>
       </div>
@@ -86,7 +90,7 @@
       </div>
     </div>
   </footer>
-
+</div>
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -489,6 +493,18 @@ function getSelectorArgs(argsString) {
       // callback on scroll end
     }
   });
+});
+
+$('.js-docs-trigger').on('click', function(event) {
+  event.preventDefault();
+
+  $('.js-docs-sidebar').addClass('is-active');
+});
+
+$('.js-docs-trigger-close').on('click', function(event) {
+  event.preventDefault();
+
+  $('.js-docs-sidebar').removeClass('is-active');
 });
 </script>
 </body>
