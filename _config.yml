@@ -19,7 +19,7 @@ menubutton: Get Keycard
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://keycard.status.im/
+url: http://keycard.tech
 root: /
 permalink: :year/:month/:day/:title/
 post_asset_folder: true

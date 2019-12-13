@@ -2,6 +2,12 @@ menubutton: Get Keycard
 
 header:
   menu:
+    why:
+      title: Why
+    features:
+      title: Features
+    security:
+      title: Security
     docs:
       title: Docs
     about:

@@ -1,5 +1,11 @@
 header:
   menu:
+    why:
+      title: Warum
+    features:
+      title: Features
+    security:
+      title: Sicherheit
     docs:
       title: Docs
     about:
