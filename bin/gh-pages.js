@@ -1,6 +1,6 @@
 var ghpages = require('gh-pages')
  
-ghpages.publish('dist', {
+ghpages.publish('public', {
   repo: ( 
     'https://'
     + process.env.GH_USER + ':'
