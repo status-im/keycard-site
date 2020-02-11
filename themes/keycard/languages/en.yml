@@ -88,7 +88,7 @@ about:
   block:
     opensource:
       title: An <strong>Open Source Project</strong>
-      subtitle: Keycard is an entirely open source project built by core contributors and an active community. <br/><br/>Check out the <a href="https://github.com/status-im/status-keycard" target="_blank" title="Github Repo">GitHub Repo</a> or <a href="http://get.status.im/chat/public/status-keycard" title="Chat in Status" target="_blank">Join the chat in Status.
+      subtitle: Keycard is an entirely open source project built by core contributors and an active community. <br/><br/>Check out the <a href="https://github.com/status-im/status-keycard" target="_blank" title="Github Repo">GitHub Repo</a> or <a href="http://join.status.im/chat/public/status-keycard" title="Chat in Status" target="_blank">Join the chat in Status.
     contributions:
       title: The <strong>Core Contributors</strong>
       subtitle: We’re a diverse group of engineers with expertise in hardware, security, and web3 technology
