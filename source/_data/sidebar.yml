@@ -31,6 +31,9 @@ docs:
           - title: Cash applet
             path: cash.html
 
+      - title: Web3 API Extensions
+        path: web3.html
+
       - title: APDU API
         path: apdu
         children:
@@ -69,7 +72,7 @@ docs:
           - title: SIGN
             path: sign.html
           - title: SET PINLESS PATH
-            path: setpinlesspath.html 
+            path: setpinlesspath.html
           - title: EXPORT KEY
             path: exportkey.html
           - title: STORE DATA
