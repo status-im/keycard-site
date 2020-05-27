@@ -168,6 +168,11 @@
       </li>
 
       <li class="c-side-navigation__item ">
+        <a href="/docs/web3.html" class="c-side-navigation__item__anchor">Web3 API Extensions</a>
+        
+      </li>
+
+      <li class="c-side-navigation__item ">
         <a href="/docs/apdu" class="c-side-navigation__item__anchor">APDU API</a>
         
         <ul class="c-side-navigation__item__tree">
@@ -286,7 +291,7 @@
   
       </div>
       <div class="o-grid__column-1-1 o-grid__column-large-2-3">
-        <h1 id="Cash-applet"><a href="#Cash-applet" class="headerlink" title="Cash applet"></a>Cash applet</h1><p>Since version 3.0 the Keycard package also includes a Cash applet. When installed, the applet immediately generates a keypair which cannot be changed, exported or be used for derivation. The applet only responds to the SELECT and SIGN commands and has no concept of PIN or SecureChannel. All in all, it is a very basic version of the main Keycard applet. </p>
+        <h1 id="Cash-applet"><a href="#Cash-applet" class="headerlink" title="Cash applet"></a>Cash applet</h1><p>Since version 3.0 the Keycard package also includes a Cash applet. When installed, the applet immediately generates a keypair which cannot be changed, exported or be used for derivation. The applet only responds to the SELECT and SIGN commands and has no concept of PIN or SecureChannel. All in all, it is a very basic version of the main Keycard applet. This applet is completely separate from the Wallet applet and they do not share any key.</p>
 <p>The use cases for this applet are burner wallets, payment cards (including prepaid ones). This applet can be installed alongside the main Keycard applet and does not interfere with it. As the name implies, the applet has roughly the same security level of cash in the pocket and should be used with this in mind. Security cen be enhanced by making the applet a signer to a smartcontract (instead of holding funds directly) and applying anti-fraud policies on the network.</p>
 <p>The SDK provides a separate command set to interact with this applet.</p>
 <h2 id="Instatiating-the-command-set"><a href="#Instatiating-the-command-set" class="headerlink" title="Instatiating the command set"></a>Instatiating the command set</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// cardChannel is our CardChannel instance</span>
