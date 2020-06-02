@@ -20,7 +20,7 @@ Then, you must import the correct dependency. In case you are building an Androi
 
 ```groovy
 dependencies {
-  implementation 'com.github.status-im.status-keycard-java:android:2.0.0'
+  implementation 'com.github.status-im.status-keycard-java:android:3.0.2'
 }
 ```
 
@@ -28,7 +28,7 @@ If you are working on the desktop, then you need this line instead
 
 ```groovy
 dependencies {
-  implementation 'com.github.status-im.status-keycard-java:desktop:2.0.0'
+  implementation 'com.github.status-im.status-keycard-java:desktop:3.0.2'
 }
 ```
 
