@@ -2,9 +2,9 @@
 <html lang="en" dir="ltr">
   <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
-  <title>Getting Started | Keycard - Secure, Contactless, Open Source, Crypto Hardwallet</title>
+  <title>Card Setup | Keycard - Secure, Contactless, Open Source, Crypto Hardwallet</title>
   <meta name="description" content="Keycard is a new type of smartcard built with an open API for simple integration with crypto wallets and hardware. Designed to safely send, store, and receive cryptocurrencies in a seamless contactless experience.">
-  <meta http-equiv="X-UA-CompatibleGetting Started | Keycard - Secure, Contactless, Open Source, Crypto Hardwallet" content="IE=Edge,chrome=1">
+  <meta http-equiv="X-UA-CompatibleCard Setup | Keycard - Secure, Contactless, Open Source, Crypto Hardwallet" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
   <link rel="canonical" href="http://keycard.tech/docs/applet_installation.html">
@@ -100,7 +100,7 @@
         <ul class="c-side-navigation__item__tree">
           
       <li class="c-side-navigation__item is-active">
-        <a href="/docs/applet_installation.html" class="c-side-navigation__item__anchor">Applet Installation</a>
+        <a href="/docs/applet_installation.html" class="c-side-navigation__item__anchor">Card Setup</a>
         
       </li>
 
@@ -291,7 +291,8 @@
   
       </div>
       <div class="o-grid__column-1-1 o-grid__column-large-2-3">
-        <h1 id="Preparing-the-card"><a href="#Preparing-the-card" class="headerlink" title="Preparing the card"></a>Preparing the card</h1><p>If you got a Keycard and you are integrating it in your project, you will most likely want to reset the applet status completely for testing purposes. This is done by reinstalling the applet, which can be accomplished using the <a href="https://github.com/status-im/keycard-cli" target="_blank" rel="noopener">Keycard CLI</a>. To use  the Keycard CLI, a USB reader is needed to be able to communicate with the card.</p>
+        <h1 id="Preparing-the-card"><a href="#Preparing-the-card" class="headerlink" title="Preparing the card"></a>Preparing the card</h1><p>Keycard ships with all applets fully installed but not initialized. The most convenient way to initialize and manage the card is to install the <a href="https://github.com/status-im/keycard-connect" target="_blank" rel="noopener">Keycard Connect</a> Android app. It allows to fully initialize a card with pairing key, PIN, PUK and BIP39 seed. It also provides basic functionality like changing credentials, changing or removing keys and clear pairing slots. The last functionality is especially useful if you are integrating with Keycard and accidentally fill all pairing slots. Using the “Unpair others” button will remove all pairing except the Keycard Connect’s one.</p>
+<p>In some cases you might want to reset the applet status completely for testing purposes. This is done by reinstalling the applet, which can be accomplished using the <a href="https://github.com/status-im/keycard-cli" target="_blank" rel="noopener">Keycard CLI</a>. To use the Keycard CLI, a USB reader is needed to be able to communicate with the card. The repository contains example scripts for applet reinstallation.</p>
 <h2 id="Card-requirements"><a href="#Card-requirements" class="headerlink" title="Card requirements"></a>Card requirements</h2><p>The Keycard applet can be installed not only on our cards, but on any card which meets the following requirements:</p>
 <ul>
 <li>JavaCard 3.0.4 or later.</li>
