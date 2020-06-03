@@ -1,11 +1,13 @@
 ---
 id: applet_installation
-title: Getting Started
+title: Card Setup
 ---
 
 # Preparing the card
 
-If you got a Keycard and you are integrating it in your project, you will most likely want to reset the applet status completely for testing purposes. This is done by reinstalling the applet, which can be accomplished using the [Keycard CLI](https://github.com/status-im/keycard-cli). To use  the Keycard CLI, a USB reader is needed to be able to communicate with the card.
+Keycard ships with all applets fully installed but not initialized. The most convenient way to initialize and manage the card is to install the [Keycard Connect](https://github.com/status-im/keycard-connect) Android app. It allows to fully initialize a card with pairing key, PIN, PUK and BIP39 seed. It also provides basic functionality like changing credentials, changing or removing keys and clear pairing slots. The last functionality is especially useful if you are integrating with Keycard and accidentally fill all pairing slots. Using the "Unpair others" button will remove all pairing except the Keycard Connect's one.
+
+In some cases you might want to reset the applet status completely for testing purposes. This is done by reinstalling the applet, which can be accomplished using the [Keycard CLI](https://github.com/status-im/keycard-cli). To use the Keycard CLI, a USB reader is needed to be able to communicate with the card. The repository contains example scripts for applet reinstallation.
 
 ## Card requirements
 
@@ -28,4 +30,3 @@ Best performance is achieved if the card supports:
 * Signature.ALG_HMAC_SHA_512
 
 Keycard requires about 10kb of NVM. All allocations, instantiations and checks are performed at installation time, so if installation succeeds, the applet will work fine.
-

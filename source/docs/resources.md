@@ -17,4 +17,6 @@ Here you find the links to all repositories and tools related to Keycard develop
 * [React Native library](https://github.com/status-im/react-native-status-keycard)
 
 ## Tools
+
 * [Keycard CLI](https://github.com/status-im/keycard-cli)
+* [Keycard Connect](https://github.com/status-im/keycard-connect)

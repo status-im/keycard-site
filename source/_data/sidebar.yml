@@ -2,7 +2,7 @@ docs:
   - title: Docs
     path: docs
     children:
-      - title: Applet Installation
+      - title: Card Setup
         path: applet_installation.html
       - title: Resources
         path: resources.html
