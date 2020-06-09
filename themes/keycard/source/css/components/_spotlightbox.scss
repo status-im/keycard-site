@@ -16,14 +16,6 @@
     background-size: 150%;
   }
 
-  a {
-    color: get-color(blue, lighter);
-
-    &:hover {
-      color: get-brand(primary);
-    }
-  }
-
   .icon {
     fill: #fff;
   }

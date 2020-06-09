@@ -23,6 +23,8 @@ $(document).ready(function() {
     $('.js-navigation-list').addClass('is-active');
   });
 
+  
+
   $('.js-navigation-close').on('click', function(event) {
     event.preventDefault();
 

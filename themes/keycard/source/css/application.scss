@@ -19,7 +19,8 @@
         'objects/actionbar',
         'objects/navigation',
         'objects/heading',
-        'objects/side-navigation';
+        'objects/side-navigation',
+        'objects/media';
 
 @import 'components/icons',
         'components/button',
@@ -32,4 +33,7 @@
         'components/ghostbox',
         'components/header',
         'components/footer',
-        'components/teaser';
+        'components/teaser',
+        'components/accordion';
+
+@import 'utilities/text';

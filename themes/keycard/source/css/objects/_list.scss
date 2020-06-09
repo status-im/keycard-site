@@ -16,11 +16,11 @@
   display: flex;
   flex-direction: row;
   list-style: none;
-  margin: get-stack-spacing(l);
   margin-left: - get-inline-spacing(m);
   padding: 0;
 
   li {
     margin-left: get-inline-spacing(m);
+    margin-top: get-stack-spacing(s);
   }
 }

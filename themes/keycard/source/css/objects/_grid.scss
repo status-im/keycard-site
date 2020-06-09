@@ -11,6 +11,12 @@
   &--centered {
     align-items: center;
   }
+  &--together {
+    [class*="o-grid__column-"],
+    [class^="o-grid__column-"] {
+      margin-top: 0;
+    }
+  }
 }
 
 .o-row {
@@ -44,6 +50,10 @@
 
 .o-distance-small {
   margin-top: get-stack-spacing(m);
+}
+
+.o-distance-medium {
+  margin-top: get-stack-spacing(l);
 }
 
 .o-justified--large {

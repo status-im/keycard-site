@@ -1,7 +1,7 @@
 .a-button {
   cursor: pointer;
   display: inline-block;
-  padding: get-inset-squish-spacing(l);
+  padding: get-inset-spacing(m) get-inset-spacing(l);
   vertical-align: top;
   -webkit-appearance: none;
   border: 2px solid transparent;

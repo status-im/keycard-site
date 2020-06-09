@@ -1,0 +1,25 @@
+.o-media {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  
+  @include respond(medium) {
+    flex-direction: row;
+  }
+
+  &__asset {
+    order: -1;
+
+    @include respond(medium) {
+      order: initial;
+      width: 40%;
+    }
+  }
+
+  &__body {
+    @include respond(medium) {
+      padding-left: 64px;
+      width: 60%;
+    }
+  }
+}

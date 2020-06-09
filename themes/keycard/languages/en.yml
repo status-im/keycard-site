@@ -2,22 +2,22 @@ menubutton: Get Keycard
 
 header:
   menu:
-    why:
-      title: Why
     features:
       title: Features
     security:
       title: Security
     docs:
       title: Docs
+    faq:
+      title: FAQ
     about:
-      title: About us
+      title: About
 
-  title: Secure, Contactless, Open Source Hardwallet
-  subtitle: Keycard is a new type of smartcard built with an open API for simple integration with crypto wallets and hardware. Designed to safely send, store, and receive cryptocurrencies in a seamless contactless experience.
+  title: Secure, Contactless, Hardware Wallet & Open API
+  subtitle: Keycard is a new type of smartcard and open source API for simple integration with crypto wallets, DApps, and hardware. Designed to safely send, store, and receive cryptocurrencies in a seamless contactless experience.
   button:
-    primary: Get keycard
-    secondary: See the documentation
+    primary: Get Keycard
+    secondary: Integrate with Keycard
 
 footer:
   documentation:
@@ -39,6 +39,7 @@ footer:
     links:
       contact: Contact us
       privacy: Privacy Policy
+      community: Community Forum
 
   bottomtext: We are part of the Status Network
 
@@ -48,8 +49,8 @@ home:
   description: dasdsa
   block:
     ecosystem:
-      title: Creating A <strong>Secure Crypto Ecosystem</strong>
-      subtitle: Compatible with both mobile and desktop wallets, keycard creates a safe and trustworthy crypto ecosystem for users. It can be loaded with cryptocurrency to be used as a debit card and also integrate with point of sale systems for easy retail crypto transactions.
+      title: <strong>Now Integrated with Status</strong>
+      subtitle: Keycard has developed an applet integrated with Status enabling offline private key management, transaction authorization, and  two-factor authentication for account access.
     doing:
       title: <strong>Do more</strong> with Keycard
       itemA:
@@ -57,31 +58,30 @@ home:
         subtitle: An HD BIP-32 wallet which safely stores Ethereum, ERC20 tokens, Bitcoin, Bitcoin Cash, Litecoin, Ripple, and any currency based on ECDSA signatures.
       itemB:
         title: Contactless Transaction Verification
-        subtitle: With NFC, you can securely sign and verify transactions & payments by tapping Keycard on your mobile device.
+        subtitle: With NFC, securely sign and authorize transactions & payments by tapping Keycard on a mobile device.
       itemC:
         title: Tap-To-Launch
-        subtitle: Users can launch a designated app or a URL simply by tapping their card on their phone.
+        subtitle: Program Keycard to launch a designated app or a URL simply by tapping the card on a phone, just like a contactless QR code.
       itemD:
         title: Inexpensive and Familiar Design
         subtitle: Designed similar to a credit/debit card, Smartcards are an inexpensive, simple, and secure way to onboard new users.
-      itemE:
-        title: Works with Desktop Wallets Too
-        subtitle: Keycard can easily be used with a desktop application with any USB-contact reader.
     security:
       title: Built for <strong>Security</strong>
-      subtitle: Keycard is designed to safely store your private keys offline in an air-gapped environment. They never leave the secure element of the card and are always kept offline.
+      subtitle: Keycard is designed to safely store private keys offline in an air-gapped environment. They never leave the secure element of the card and are always kept offline.
       button: See the Docs
       itemA:
         title: Keycard hardware security is compliant with the most stringent standard (Common Criteria EAL5+) . No one will be able to access private keys even if the card is stolen.
       itemB:
         title: Generate secrets with the built in True Random Number Generator.
-    opensource:
-      title: An <strong>Open Source API</strong>
-      subtitle: Both Keycard and the Keycard API are entirely open source and allow any developer to integrate with mobile apps, desktop wallets, point of sale retail devices and even create their own smartcards.
-      text: <strong>Easy to Use Java (Android & Desktop) and Go SDK</strong><br> High-level classes abstract away the most tedious tasks including Secure Channel, APDU parsing, serialization and more.
+    brandedCards:
+      title: <strong>Create Your Own Cards</strong>
+      subtitle: Want to provide a custom experience for your users? Contact us about creating cards with your own custom design and branding.
+      text: <strong>We will support with design, manufacturing, and fulfillment of your cards</strong>
       button:
-        primary: See the Docs
-        secondary: Github Repo
+        primary: Contact us
+    faq:
+      title: <strong>Do you have questions?</strong>
+      button: View the FAQ
 
 about:
   title: About Us
