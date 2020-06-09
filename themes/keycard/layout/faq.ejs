@@ -1,0 +1,34 @@
+
+<!-- The main content area -->
+<main role="main">
+  <div class="o-constrained-medium u-text-center">
+    <h1 class="a-title"><strong>FAQ</strong></h1>
+    <p class="a-subtitle">Can't find what you are looking for? Check out the community forum on <a href="https://discuss.status.im/c/products/keycard/39" title="" target="_blank">Discuss</a> or join us in the #support channel in <a href="https://discord.gg/3Exux7Y" title="" target="_blank">Discord.</a></p>
+  </div>
+	<div class="o-constrained o-distance">
+    <% for (let a of site.data.faq) { %>
+      <h2 class="a-title u-text-center o-distance-medium"><%= a.title %></h2>
+      <% for (let list of a.list) { %>
+        <div class="c-accordion js-accordion o-distance-small">
+          <div class="c-accordion__header js-accordion-trigger">
+            <h3><%= list.question %></h3>
+            <%- partial('partial/icons/arrow-down', {className: 'c-accordion__arrow'}) %>
+          </div>
+          <div class="c-accordion__body js-accordion-content">
+            <% if(list.list) { %>
+              <ul>
+                <% for (let li of list.list) { %>
+                  <li><%= li %></li>
+                <% } %>
+              </ul>
+            <% } %>
+            <% if(list.text) { %>
+              <%- list.text %>
+            <% } %>
+          </div>
+        </div>
+      <% } %>
+    <% } %>
+  </div>
+
+</main>

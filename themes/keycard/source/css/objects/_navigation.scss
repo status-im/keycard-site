@@ -1,11 +1,11 @@
 .o-navigation {
-  @include respond(large) {
+  @include respond(xLarge) {
     margin-left: - get-inline-spacing(l);
   }
   &__item {
     margin-top: get-stack-spacing(m);
 
-    @include respond(large) {
+    @include respond(xLarge) {
       margin-left: get-inline-spacing(l);
       margin-top: 0;
     }
@@ -52,7 +52,7 @@
     width: 320px;
     z-index: get-index(navigationList);
 
-    @include respond(large) {
+    @include respond(xLarge) {
       align-items: center;
       flex-direction: row;
       margin-left: - get-inline-spacing(m);
@@ -80,7 +80,7 @@
     display: block;
     line-height: 0;
 
-    @include respond(large) {
+    @include respond(xLarge) {
       display: none;
     }
 
@@ -96,14 +96,14 @@
     transform: translateX(-100%);
     transition: all .3s;
 
-    @include respond(large) {
+    @include respond(xLarge) {
       background: transparent;
       box-shadow: none;
       transform: translateX(0);
     }
 
     .a-logo {
-      @include respond(large) {
+      @include respond(xLarge) {
         display: none;
       }
     }
