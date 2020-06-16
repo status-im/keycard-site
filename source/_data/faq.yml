@@ -45,9 +45,6 @@
 
     - question: What are pairing code and PUK?
       text: When you onboard with Status and Keycard, you will be provided a pairing code and PUK.. You have to write down these two pieces of data very carefully because they will never be presented to you again. Your pairing code will be needed when you want to use your Keycard with another phone or other app than Status. Your PUK code will be needed if you forget your PIN, in order to reset and change it.
-    
-    - question: What are pairing code and PUK?
-      text: When you onboard with Status and Keycard, you will be provided a pairing code and PUK.. You have to write down these two pieces of data very carefully because they will never be presented to you again. Your pairing code will be needed when you want to use your Keycard with another phone or other app than Status. Your PUK code will be needed if you forget your PIN, in order to reset and change it.
      
     - question: What is the mnemonic phrase?
       text: Status accounts are generated with a master secret which can be represented with a list of words. When you generate a new Status account, you will be provided by this list of words. It is crucial that you write down this list of words somewhere safe. If you lose your Keycard, lose your PUK, or Pairing code together with your phone, it’s your only solution to access your funds.
