@@ -12,6 +12,8 @@ header:
       title: FAQ
     about:
       title: About
+    blog:
+      title: Blog
 
   title: Secure, Contactless, Hardware Wallet & Open API
   subtitle: Keycard is a new type of smartcard and open source API for simple integration with crypto wallets, DApps, and hardware. Designed to safely send, store, and receive cryptocurrencies in a seamless contactless experience.
@@ -40,6 +42,7 @@ footer:
       contact: Contact us
       privacy: Privacy Policy
       community: Community Forum
+      blog: Blog
 
   bottomtext: We are part of the Status Network
 
