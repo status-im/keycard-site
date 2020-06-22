@@ -7,7 +7,7 @@
   },
   "scripts": {
     "build": "hexo generate",
-    "deploy": "node bin/gh-pages.js"
+    "deploy": "node bin/deploy.js"
   },
   "dependencies": {
     "hexo": "4.2.1",
