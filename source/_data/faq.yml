@@ -54,6 +54,9 @@
 
     - question: I already own a Status account and want to use it with my Keycard, how should I proceed
       text: You will need to deinstall Status to start from a fresh install. When onboarding you will need to enter your mnemonic phrase and store it on Keycard. You will recover your account and all interactions with your private keys will now be protected by Keycard.
+      
+    - question: Can I reinstall Keycard applet (advanced users only)?
+      text: If you’re an advanced user, or a developer, you might want to reinstall the Javacard applet on your Keycard. This will put back your card in the same state thzen when you first got it brand new (factory reset). You might want to do this if you’ve lost your PIN & PUK, or if your pairing slots on the card are all full. This operation will delete everything on our card. Do this at your own peril, and please make sure you have your 12 words mnemonic if you have an account on your card. There are several ways to do this. The best way is to have a USB contacted (not NFC) reader and a desktop computer. In that case you use or use our CLI tool (https://github.com/status-im/keycard-cli/releases) or a 3rd party (opensource) GUI tool (https://github.com/choppu/keycard-desktop/releases) to reinstall the applet. If you only have an Android smartphone with NFC, you can use Keycard Connect (https://github.com/status-im/keycard-connect/releases) to do this. This is however a dangerous operation and might destroy your card if connection is lost during the reinstallation. Make sure the card is firmly touching the phone and do not disconnect it until the “Tap your card” prompt doesn’t go away. On newer JCOP4 cards this takes less than a minute but on slower JCOP3 cards it can take several minutes. The applet itself, distributed as a standard Javacard cap file can be found here https://github.com/status-im/status-keycard/releases. You will need this regardless of the method you use to reinstall.
 
 - other:
   title: Other questions
@@ -70,6 +73,9 @@
     - question: I lost my Pairing code, what should I do?
       text: If you lost your pairing code, you must make sure that you have noted down your mnemonic words. Without your pairing code and your mnemonic words you are at risk to lose access to your funds if you lose your phone.
 
+    - question: My keycard pairing slots are full, what should I do?
+      text: If you have paired your keycard with more than 5 different devices then all the 5 pairing slots of your cards are full. There is for now no user interface within Status to free one of these slots. If you need to free one up you need to reinstall the applet (see related FAQ entry. This is a sensitive operation). As a suggestion, as soon as you get your Keycard (or restore it), pair it with Keycard Connect (https://github.com/status-im/keycard-connect/releases). If you do this, you will be able to unpair other clients without having to reinstall the applet. If you are developing with the Keycard, you can find the documentation of the unpairing command is here https://keycard.tech/docs/apdu/unpair.html
+   
     - question: I lost my mnemonic phrase, what should I do?
       text: If you lost your mnemonic phrase for your current your account, you have to act because you are under the risk of losing all your funds at some point if you lose your Keycard or forget your PUK/Pairing code. You should immediately create a new wallet with a new mnemonic phrase and transfer your assets from your current account on it.
       
