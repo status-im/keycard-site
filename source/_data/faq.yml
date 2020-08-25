@@ -82,7 +82,5 @@ The applet itself, distributed as a standard Javacard cap file can be found here
     - question: I lost my mnemonic phrase, what should I do?
       text: If you lost your mnemonic phrase for your current your account, you have to act because you are under the risk of losing all your funds at some point if you lose your Keycard or forget your PUK/Pairing code. You should immediately create a new wallet with a new mnemonic phrase and transfer your assets from your current account on it.
       
-      
-  
     - question: I lost my keycard, what should I do?
       text: If you lost your keycard, your funds are safe. To use your keycard on a phone you do not own (and thus haven't paired the keycard with) one needs your pairing code and your 6 digits pass code to access your funds. 
