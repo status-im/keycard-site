@@ -13,9 +13,6 @@
     - question: How much does Keycard cost?
       text: Keycard costs 29€ Retail and can be purchased here.
     
-    - question: Is Keycard integrated with any other wallets?
-      text: Status is the first production integration with Keycard. However, developers can integrate Keycard with their products with the Open Source Keycard API available here.
-    
     - question: Can I use Keycard as a debit/credit card to make payments?
       text: For now Keycard can be used by Status user as hardware wallet only. It is part of our roadmap to introduce physical payments with Keycard as part of an open, inclusive and permissionless payment network where payment terminals are any phone running Status.
 
@@ -24,6 +21,9 @@
 
     - question: Is Keycard integrated with any other wallets?
       text: Status is the first production integration with Keycard. However, developers can integrate Keycard with their products with the Open Source Keycard API available here.
+
+    - question: Which assets does Keycard supports?
+      text: Status app can be used with Keycard and supports Ethereum assets (eth, erc-20, nfts). Keycard itself supports ecdsa secp256k1 signatures, so if you're a wallet developper you can integrate Keycard with any other blockchain that uses secp256k1 ecdsa signatures including of course bitcoin. 
 
 - security:
   title: Security
