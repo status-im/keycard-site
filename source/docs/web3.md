@@ -35,7 +35,7 @@ When however the data to be signed contains `uint256 amount` and `address curren
 
 If the currency field address is considered to be the address of an ERC20 token. If this address is zero, the amount is interpreted as plain ETH. This transaction format is used by the [Keycard Payment Network](https://github.com/status-im/payment-network-apps) project.
 
-Another example of a custom screen, is the one displayed for the [Keycard Redeem](https://github.com/status-im/keycard-redeem) project. In this case we recognize the `address recipient` and `bytes32 code` field as a redeem request and we display the recipient field address clearly in the signature screen. If the recipient field in account managed by Status, instead of the plain address, the account name is shown. See screenshot below
+Another example of a custom screen, is the one displayed for the [Keycard Redeem](https://github.com/status-im/keycard-redeem) project. In this case we recognize the presence of the fields `address recipient` and `bytes32 code` field as a redeem request and we display the recipient field address clearly in the signature screen. If the recipient field in account managed by Status, instead of the plain address, the account name is shown. See screenshot below
 
 ![EIP-712 ERC20 screen](/images/web3-redeem.png)
 
