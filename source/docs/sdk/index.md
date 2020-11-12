@@ -8,12 +8,12 @@ This is an SKD essentially a Java library for development of applications for St
 
 See the sub-sections below for more details:
 
-* [Installation](/keycard_api/sdk/installation.html)
-* [Card Connection](/keycard_api/sdk/connection.html)
-* [Preparation](/keycard_api/sdk/preparation.html)
-* [Secure Channel](/keycard_api/sdk/securechannel.html)
-* [Authentication](/keycard_api/sdk/authentication.html)
-* [Wallet Creation](/keycard_api/sdk/create_wallet.html)
-* [Derivation & Signing](/keycard_api/sdk/derivation_sign.html)
-* [Pinless Signing](/keycard_api/sdk/pinless.html)
-* [Exporting Keys](/keycard_api/sdk/export.html)
+* [Installation](installation.html)
+* [Card Connection](connection.html)
+* [Preparation](preparation.html)
+* [Secure Channel](securechannel.html)
+* [Authentication](authentication.html)
+* [Wallet Creation](create_wallet.html)
+* [Derivation & Signing](derivation_sign.html)
+* [Pinless Signing](pinless.html)
+* [Exporting Keys](export.html)
