@@ -28,8 +28,8 @@
 - security:
   title: Security
   list: 
-    - question: What happens if I lose my Keycard?
-      text: No, you do not need a Keycard to use Status. Status wallet is non-custodial and audited by 3rd party security firms. It is secure on its own, but with Keycard, you’re adding an even superior level of hardware security.
+    - question: Are my funds safe if I lost my Keycard?
+      text: If you lost your keycard, your funds are safe. To use your keycard on a phone you do not own (and thus haven't paired the keycard with) one needs your pairing code and your 6 digits pass code to access your funds. You can recover your funds with Status or any other wallet by using your mnemonic.  
     
     - question: How secure is Keycard?
       text: The security of the card is dependent upon the applet software that is used on the card. This applet is open source (link) and has been audited by a third party security auditing firm. From a hardware perspective, Keycard is a SE secure element with a very high level of hardware protection. It passes CC EAL5+ formal testing for its security evaluation.
@@ -80,4 +80,4 @@
       text: If you lost your mnemonic phrase for your current your account, you have to act because you are under the risk of losing all your funds at some point if you lose your Keycard or forget your PUK/Pairing code. You should immediately create a new wallet with a new mnemonic phrase and transfer your assets from your current account on it.
       
     - question: I lost my keycard, what should I do?
-      text: If you lost your keycard, your funds are safe. To use your keycard on a phone you do not own (and thus haven't paired the keycard with) one needs your pairing code and your 6 digits pass code to access your funds. 
+      text: If you lost your keycard, your funds are safe. To use your keycard on a phone you do not own (and thus haven't paired the keycard with) one needs your pairing code and your 6 digits pass code to access your funds. You can recover your funds with Status or any other wallet by using your mnemonic.  
