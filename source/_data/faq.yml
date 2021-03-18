@@ -8,7 +8,7 @@
         - And Keycard can be used a 2FA to protect access to your Status account. To login your account you will need to tap your card and enter your PIN
 
     - question: Is Keycard available with Status on Android and iOS?
-      text: Keycard is currently only available on Android to use with Status. The Keycard team is currently working on iOS integration.
+      text: Keycard is integrated as a hardware wallet with Status on Android and on iOS (since Status v1.12)
     
     - question: How much does Keycard cost?
       text: Keycard costs 29€ Retail and can be purchased here.
