@@ -44,7 +44,7 @@
 
   <meta property="og:image" content="/img/share.png?v=0.0.5" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.4/styles/dracula.min.css">
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
 <body>
 
 
@@ -65,11 +65,11 @@
               </a>
               
               
-                <a href="//de#features" title="Features"
+                <a target="_blank" rel="noopener" href="//de#features" title="Features"
                   class="o-navigation__item">
                   Features
                 </a>
-                <a href="//de#security" title="Sicherheit"
+                <a target="_blank" rel="noopener" href="//de#security" title="Sicherheit"
                   class="o-navigation__item">
                   Sicherheit
                 </a>
@@ -86,11 +86,11 @@
                 class="o-navigation__item ">
                 Ueber uns
               </a>
-              <a href="https://news.keycard.tech" title="Blog"
+              <a target="_blank" rel="noopener" href="https://news.keycard.tech" title="Blog"
                 class="o-navigation__item">
                 Blog
               </a>
-              <a href="https://get.keycard.tech/" target="_blank" rel="noopener" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
+              <a target="_blank" rel="noopener" href="https://get.keycard.tech/" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
               <div class="o-navigation__item">
                 <ul class="o-list-row">
                   <li>
@@ -357,12 +357,15 @@ mnemonic<span class="token punctuation">.</span><span class="token function">fet
 cmdSet<span class="token punctuation">.</span><span class="token function">verifyPIN</span><span class="token punctuation">(</span>pin<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// Loads the key generated from the mnemonic phrase.</span>
-cmdSet<span class="token punctuation">.</span><span class="token function">loadKey</span><span class="token punctuation">(</span>mnemonic<span class="token punctuation">.</span><span class="token function">toBIP32KeyPair</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+cmdSet<span class="token punctuation">.</span><span class="token function">loadKey</span><span class="token punctuation">(</span>mnemonic<span class="token punctuation">.</span><span class="token function">toBIP32KeyPair</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="Importing-a-wallet-from-BIP39-mnemonic-phrase"><a href="#Importing-a-wallet-from-BIP39-mnemonic-phrase" class="headerlink" title="Importing a wallet from BIP39 mnemonic phrase"></a>Importing a wallet from BIP39 mnemonic phrase</h2><p>Importing an existing passphrase requires only the loading step.</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// The passphrase is a string with space separated words. The password can be any non-null string, usually is empty.</span>
-cmdSet<span class="token punctuation">.</span><span class="token function">loadKey</span><span class="token punctuation">(</span>Mnemonic<span class="token punctuation">.</span><span class="token function">toBinarySeed</span><span class="token punctuation">(</span>passphrase<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+cmdSet<span class="token punctuation">.</span><span class="token function">loadKey</span><span class="token punctuation">(</span>Mnemonic<span class="token punctuation">.</span><span class="token function">toBinarySeed</span><span class="token punctuation">(</span>passphrase<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="Generating-keys-on-card"><a href="#Generating-keys-on-card" class="headerlink" title="Generating keys on-card"></a>Generating keys on-card</h2><p>This is the simplest and safest method, because the generated wallet never leaves the card and there is no “paper backup” to keep secure. Using a multi-sig wallet can solve the problem of backups, by having multiple cards signers for the wallet. Using the SDK, you simply do</p>
-<pre class=" language-java"><code class="language-java">cmdSet<span class="token punctuation">.</span><span class="token function">generateKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-java"><code class="language-java">cmdSet<span class="token punctuation">.</span><span class="token function">generateKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="Importing-an-EC-keypair"><a href="#Importing-an-EC-keypair" class="headerlink" title="Importing an EC keypair"></a>Importing an EC keypair</h2><p>You can import on the keycard any EC keypair on the SECP256k1 curve, with or without the BIP32 extension. If your import a key without the BIP32 extension, then key derivation will not work, but you will still be able to use the Keycard for signing transactions using the imported key. This scenario can be useful if you are migrating from a wallet not using BIP39 passphrases or for wallets following some custom generation rules. It is however generally preferable to use one of the methods presented above.</p>
 <p>An example of key import is</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// privKey is the S component of the key, as a 32-byte long byte array</span>
@@ -373,7 +376,8 @@ cmdSet<span class="token punctuation">.</span><span class="token function">loadK
 BIP32KeyPair keypair <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BIP32KeyPair</span><span class="token punctuation">(</span>privKey<span class="token punctuation">,</span> chainCode<span class="token punctuation">,</span> pubKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// Loads the keypair</span>
-cmdSet<span class="token punctuation">.</span><span class="token function">loadKey</span><span class="token punctuation">(</span>keypair<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+cmdSet<span class="token punctuation">.</span><span class="token function">loadKey</span><span class="token punctuation">(</span>keypair<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 
         </div>
       </div>
@@ -486,7 +490,7 @@ cmdSet<span class="token punctuation">.</span><span class="token function">loadK
   </footer>
 </div>
   <script src="/javascripts/adparam.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <script>
   /*!

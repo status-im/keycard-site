@@ -44,7 +44,7 @@
 
   <meta property="og:image" content="/img/share.png?v=0.0.5" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.4/styles/dracula.min.css">
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
 <body>
 
 
@@ -65,11 +65,11 @@
               </a>
               
               
-                <a href="//de#features" title="Features"
+                <a target="_blank" rel="noopener" href="//de#features" title="Features"
                   class="o-navigation__item">
                   Features
                 </a>
-                <a href="//de#security" title="Sicherheit"
+                <a target="_blank" rel="noopener" href="//de#security" title="Sicherheit"
                   class="o-navigation__item">
                   Sicherheit
                 </a>
@@ -86,11 +86,11 @@
                 class="o-navigation__item ">
                 Ueber uns
               </a>
-              <a href="https://news.keycard.tech" title="Blog"
+              <a target="_blank" rel="noopener" href="https://news.keycard.tech" title="Blog"
                 class="o-navigation__item">
                 Blog
               </a>
-              <a href="https://get.keycard.tech/" target="_blank" rel="noopener" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
+              <a target="_blank" rel="noopener" href="https://get.keycard.tech/" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
               <div class="o-navigation__item">
                 <ul class="o-list-row">
                   <li>
@@ -349,10 +349,12 @@
 <p>When creating or importing a wallet to the Keycard, the active key is the master key. Unless you imported a non-BIP32 compatible wallet, you usually want to set the active key to a currency account by following the BIP44 specifications for paths. Note that the maximum depth of the key path is 10, excluding the master key.</p>
 <p>Key derivation requires user authentication</p>
 <p>Since a line of code is worth a thousand words, below is an example of deriving a standard key path</p>
-<pre class=" language-java"><code class="language-java">cmdSet<span class="token punctuation">.</span><span class="token function">deriveKey</span><span class="token punctuation">(</span><span class="token string">"m/44'/0'/0'/0/0"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-java"><code class="language-java">cmdSet<span class="token punctuation">.</span><span class="token function">deriveKey</span><span class="token punctuation">(</span><span class="token string">"m/44'/0'/0'/0/0"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>Since deriving a key is an expensive operation, you usually want to know what the current path is before performing derivation. You can do this with</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// you can then get is as a string with currentPath.toString()</span>
-KeyPath currentPath <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">KeyPath</span><span class="token punctuation">(</span>cmdSet<span class="token punctuation">.</span><span class="token function">getStatus</span><span class="token punctuation">(</span>KeycardCommandSet<span class="token punctuation">.</span>GET_STATUS_P1_KEY_PATH<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+KeyPath currentPath <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">KeyPath</span><span class="token punctuation">(</span>cmdSet<span class="token punctuation">.</span><span class="token function">getStatus</span><span class="token punctuation">(</span>KeycardCommandSet<span class="token punctuation">.</span>GET_STATUS_P1_KEY_PATH<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>To speed up operations, key derivation can be started not only from the master key, but also from the parent or the current key. The path in this case starts respectively with “../“ and “./“. You cannot navigate the hierarchy with multiple “..” in the paths, because only the direct parent of the current key is cached. Derivation from parent is especially convenient when switching between accounts of the same type. Example</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// Derive the main account</span>
 cmdSet<span class="token punctuation">.</span><span class="token function">deriveKey</span><span class="token punctuation">(</span><span class="token string">"m/44'/0'/0'/0/0"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -361,18 +363,21 @@ cmdSet<span class="token punctuation">.</span><span class="token function">deriv
 cmdSet<span class="token punctuation">.</span><span class="token function">deriveKey</span><span class="token punctuation">(</span><span class="token string">"../1"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// you can switch back and forth between siblings without limitations.</span>
-cmdSet<span class="token punctuation">.</span><span class="token function">deriveKey</span><span class="token punctuation">(</span><span class="token string">"../0"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+cmdSet<span class="token punctuation">.</span><span class="token function">deriveKey</span><span class="token punctuation">(</span><span class="token string">"../0"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="Signing"><a href="#Signing" class="headerlink" title="Signing"></a>Signing</h2><p>Your Keycard has been initialized, has a wallet and you have derived the keypath you need. You can now perform transactions by signing them with the card. Since the Keycard has no user input/output capabilities, it would be useless to transfer the entire transaction to the card for signing. You should instead calculate the transaction hash, according to the rules of the cryptocurrency you are handling and send that for signature instead. This also means, that you can handle anything which requires ECDSA signatures over SECP256k1 curve, regardless of the used hashing algorithm (at the condition that it output a 256-bit hash of course). This opens the door to signing transactions for the most common cryptocurrencies, but also makes it usable outside the realm of crypto transactions.</p>
 <p>Signing is done as</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// hash is the hash to sign, for example the Keccak-256 hash of an Ethereum transaction</span>
 <span class="token comment" spellcheck="true">// the signature object contains r, s, recId and the public key associated to this signature</span>
-RecoverableSignature signature <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RecoverableSignature</span><span class="token punctuation">(</span>hash<span class="token punctuation">,</span> cmdSet<span class="token punctuation">.</span><span class="token function">sign</span><span class="token punctuation">(</span>hash<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+RecoverableSignature signature <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RecoverableSignature</span><span class="token punctuation">(</span>hash<span class="token punctuation">,</span> cmdSet<span class="token punctuation">.</span><span class="token function">sign</span><span class="token punctuation">(</span>hash<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>Signing requires user authentication.</p>
 <h2 id="Combined-derivation-and-sign"><a href="#Combined-derivation-and-sign" class="headerlink" title="Combined derivation and sign"></a>Combined derivation and sign</h2><p>Since version 2.2 of the Keycard API, it is possible to combine derivation and sign in a single step. Additionally, it is possible to choose whether the given path becomes the current path or not. Example</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// hash is the hash to sign, the second argument is the path to use, in the same format as for the DERIVE KEY command</span>
 <span class="token comment" spellcheck="true">// the third argument is a flag indicating whether the derived key should become the current key or not</span>
 APDUResponse resp <span class="token operator">=</span> cmdSet<span class="token punctuation">.</span><span class="token function">signWithPath</span><span class="token punctuation">(</span>hash<span class="token punctuation">,</span> <span class="token string">"m/44'/0'/0'/0/0"</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-RecoverableSignature signature <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RecoverableSignature</span><span class="token punctuation">(</span>hash<span class="token punctuation">,</span> resp<span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+RecoverableSignature signature <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RecoverableSignature</span><span class="token punctuation">(</span>hash<span class="token punctuation">,</span> resp<span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 
         </div>
       </div>
@@ -485,7 +490,7 @@ RecoverableSignature signature <span class="token operator">=</span> <span class
   </footer>
 </div>
   <script src="/javascripts/adparam.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <script>
   /*!

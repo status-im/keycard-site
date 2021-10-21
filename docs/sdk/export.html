@@ -44,7 +44,7 @@
 
   <meta property="og:image" content="/img/share.png?v=0.0.5" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.4/styles/dracula.min.css">
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
 <body>
 
 
@@ -86,11 +86,11 @@
                 class="o-navigation__item ">
                 About
               </a>
-              <a href="https://news.keycard.tech" title="Blog"
+              <a target="_blank" rel="noopener" href="https://news.keycard.tech" title="Blog"
                 class="o-navigation__item">
                 Blog
               </a>
-              <a href="https://get.keycard.tech/" target="_blank" rel="noopener" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
+              <a target="_blank" rel="noopener" href="https://get.keycard.tech/" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
               <div class="o-navigation__item">
                 <ul class="o-list-row">
                   <li>
@@ -344,12 +344,13 @@
   
         </div>
         <div class="o-grid__column-1-1 o-grid__column-large-2-3">
-          <h1 id="Exporting-public-or-EIP-1581-compliant-keys"><a href="#Exporting-public-or-EIP-1581-compliant-keys" class="headerlink" title="Exporting (public or EIP-1581 compliant) keys"></a>Exporting (public or EIP-1581 compliant) keys</h1><p>Sorry for the long title, but let’s make it immediately clear: the keys used to sign transactions never leave the card and cannot be exported. You can however export any public key as well as the private key of keypaths defined in the <a href="https://eips.ethereum.org/EIPS/eip-1581" target="_blank" rel="noopener">EIP-1581 specifications</a>. Those keys, by design, are not to be used for transactions but are instead usable for operations with lower security concerns where caching or storing the key outside the card might be beneficial from an UX point of view. Of course, exporting a key always requires user authentication.</p>
+          <h1 id="Exporting-public-or-EIP-1581-compliant-keys"><a href="#Exporting-public-or-EIP-1581-compliant-keys" class="headerlink" title="Exporting (public or EIP-1581 compliant) keys"></a>Exporting (public or EIP-1581 compliant) keys</h1><p>Sorry for the long title, but let’s make it immediately clear: the keys used to sign transactions never leave the card and cannot be exported. You can however export any public key as well as the private key of keypaths defined in the <a target="_blank" rel="noopener" href="https://eips.ethereum.org/EIPS/eip-1581">EIP-1581 specifications</a>. Those keys, by design, are not to be used for transactions but are instead usable for operations with lower security concerns where caching or storing the key outside the card might be beneficial from an UX point of view. Of course, exporting a key always requires user authentication.</p>
 <h2 id="Exporting-the-current-key"><a href="#Exporting-the-current-key" class="headerlink" title="Exporting the current key"></a>Exporting the current key</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// Exports the current public key. This is allowed for any key path</span>
 BIP32KeyPair publicKey <span class="token operator">=</span> BIP32KeyPair<span class="token punctuation">.</span><span class="token function">fromTLV</span><span class="token punctuation">(</span>cmdSet<span class="token punctuation">.</span><span class="token function">exportCurrentKey</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// Exports the entire key pair. This is only allowed for key path following the EIP-1581 definition</span>
-BIP32KeyPair keypair <span class="token operator">=</span> BIP32KeyPair<span class="token punctuation">.</span><span class="token function">fromTLV</span><span class="token punctuation">(</span>cmdSet<span class="token punctuation">.</span><span class="token function">exportCurrentKey</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+BIP32KeyPair keypair <span class="token operator">=</span> BIP32KeyPair<span class="token punctuation">.</span><span class="token function">fromTLV</span><span class="token punctuation">(</span>cmdSet<span class="token punctuation">.</span><span class="token function">exportCurrentKey</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="Derive-amp-export"><a href="#Derive-amp-export" class="headerlink" title="Derive &amp; export"></a>Derive &amp; export</h2><p>The export command is very powerful, since it allows you to derive &amp; export a key in one step. You have the option to make the derived and exported key active or leave the active key untouched. You can also decide whether to export only the public key or the entire keypair (following the rules defined above).</p>
 <p>A very convenient use case is deriving an account key and retrieving the public key in one step. This is faster than doing it with two commands (derive key and export public), because every command processed has some overhead. Example</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// The first parameter is the keypath, the second tells whether that you want to make the derived &amp; exported key active</span>
@@ -358,7 +359,8 @@ BIP32KeyPair publicKey <span class="token operator">=</span> BIP32KeyPair<span c
 
 <span class="token comment" spellcheck="true">// The line above is equivalent to</span>
 <span class="token comment" spellcheck="true">// cmdSet.deriveKey("m/44'/0'/0'/0/0").checkOK();</span>
-<span class="token comment" spellcheck="true">// BIP32KeyPair publicKey = BIP32KeyPair.fromTLV(cmdSet.exportCurrentKey(true).checkOK().getData());</span></code></pre>
+<span class="token comment" spellcheck="true">// BIP32KeyPair publicKey = BIP32KeyPair.fromTLV(cmdSet.exportCurrentKey(true).checkOK().getData());</span>
+</code></pre>
 <p>Another use case, is to export keys defined by EIP-1581 without changing the current active key, since you won’t be signing with the exported key using the card</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// Let's assume the current active path is "m/44'/0'/0'/0/0"</span>
 
@@ -366,7 +368,8 @@ BIP32KeyPair publicKey <span class="token operator">=</span> BIP32KeyPair<span c
 <span class="token comment" spellcheck="true">// want the entire keypair, not only the public key</span>
 BIP32KeyPair keypair <span class="token operator">=</span> BIP32KeyPair<span class="token punctuation">.</span><span class="token function">fromTLV</span><span class="token punctuation">(</span>cmdSet<span class="token punctuation">.</span><span class="token function">exportKey</span><span class="token punctuation">(</span><span class="token string">"m/43'/60'/1581'/0'/0"</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// At this point, the current active path would still be "m/44'/0'/0'/0/0"</span></code></pre>
+<span class="token comment" spellcheck="true">// At this point, the current active path would still be "m/44'/0'/0'/0/0"</span>
+</code></pre>
 
         </div>
       </div>
@@ -479,7 +482,7 @@ BIP32KeyPair keypair <span class="token operator">=</span> BIP32KeyPair<span cla
   </footer>
 </div>
   <script src="/javascripts/adparam.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <script>
   /*!

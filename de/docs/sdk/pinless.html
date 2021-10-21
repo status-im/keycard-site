@@ -44,7 +44,7 @@
 
   <meta property="og:image" content="/img/share.png?v=0.0.5" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.4/styles/dracula.min.css">
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
 <body>
 
 
@@ -65,11 +65,11 @@
               </a>
               
               
-                <a href="//de#features" title="Features"
+                <a target="_blank" rel="noopener" href="//de#features" title="Features"
                   class="o-navigation__item">
                   Features
                 </a>
-                <a href="//de#security" title="Sicherheit"
+                <a target="_blank" rel="noopener" href="//de#security" title="Sicherheit"
                   class="o-navigation__item">
                   Sicherheit
                 </a>
@@ -86,11 +86,11 @@
                 class="o-navigation__item ">
                 Ueber uns
               </a>
-              <a href="https://news.keycard.tech" title="Blog"
+              <a target="_blank" rel="noopener" href="https://news.keycard.tech" title="Blog"
                 class="o-navigation__item">
                 Blog
               </a>
-              <a href="https://get.keycard.tech/" target="_blank" rel="noopener" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
+              <a target="_blank" rel="noopener" href="https://get.keycard.tech/" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
               <div class="o-navigation__item">
                 <ul class="o-list-row">
                   <li>
@@ -348,9 +348,11 @@
 <p>There are several scenarios made possible by this feature. One example, is the ability to use the card for payments at POS terminals. Pairing with every terminal is not practical and inserting the PIN on an untrusted device (the terminal is owned by a 3rd party) is not safe, since it could be logged. Pinless signing with no Secure Channel solves both issues.</p>
 <p>Since the wallet assigned to pinless signing is basically unprotected, it must not hold great value. One option is to consider the funds in that account like pocket cash. You put a little of your favourite cryptocurrency and should someone get hold of the card, you lost maybe the equivalent of $5. Another option, valid when using Ethereum, is to not hold any value in that wallet at all. Instead it can be used to sign meta-transactions and actual fund allocation can be handled by a smart contract through a dApp. Of course in this case the POS must be compatible with the specific payment scheme for this to work properly.</p>
 <h2 id="Defining-a-pinless-path"><a href="#Defining-a-pinless-path" class="headerlink" title="Defining a pinless path"></a>Defining a pinless path</h2><p>Defining which path is used for pinless signing, of course, requires PIN authentication and thus a Secure Channel. This means that only the owner can define which wallet is allocated for this operation. Then SDK call to set the pinless path is</p>
-<pre class=" language-java"><code class="language-java">cmdSet<span class="token punctuation">.</span><span class="token function">setPinlessPath</span><span class="token punctuation">(</span><span class="token string">"m/44'/0'/0'/0/200"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-java"><code class="language-java">cmdSet<span class="token punctuation">.</span><span class="token function">setPinlessPath</span><span class="token punctuation">(</span><span class="token string">"m/44'/0'/0'/0/200"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="Signing-with-pinless-path"><a href="#Signing-with-pinless-path" class="headerlink" title="Signing with pinless path"></a>Signing with pinless path</h2><p>When a pinless path is defined, a wallet (or POS terminal, or whatever) can invoke the <code>signPinless</code> method without having to know the path. If no pinless path was defined, the Status Word 0x6A88 will be returned. As mentioned before, opening a Secure Channel and authenticating with PIN before sending this command is allowed but not necessary.</p>
-<pre class=" language-java"><code class="language-java">cmdSet<span class="token punctuation">.</span><span class="token function">signPinless</span><span class="token punctuation">(</span>hashToSign<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-java"><code class="language-java">cmdSet<span class="token punctuation">.</span><span class="token function">signPinless</span><span class="token punctuation">(</span>hashToSign<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 
         </div>
       </div>
@@ -463,7 +465,7 @@
   </footer>
 </div>
   <script src="/javascripts/adparam.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <script>
   /*!

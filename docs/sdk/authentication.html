@@ -44,7 +44,7 @@
 
   <meta property="og:image" content="/img/share.png?v=0.0.5" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.4/styles/dracula.min.css">
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
 <body>
 
 
@@ -86,11 +86,11 @@
                 class="o-navigation__item ">
                 About
               </a>
-              <a href="https://news.keycard.tech" title="Blog"
+              <a target="_blank" rel="noopener" href="https://news.keycard.tech" title="Blog"
                 class="o-navigation__item">
                 Blog
               </a>
-              <a href="https://get.keycard.tech/" target="_blank" rel="noopener" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
+              <a target="_blank" rel="noopener" href="https://get.keycard.tech/" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
               <div class="o-navigation__item">
                 <ul class="o-list-row">
                   <li>
@@ -347,13 +347,15 @@
           <h1 id="User-authentication"><a href="#User-authentication" class="headerlink" title="User authentication"></a>User authentication</h1><p>Most operations with the card (all involving operations with the wallet or credentials) require authenticating the user. After authentication, the user remains authenticated until the card is powered off or the application is re-selected.</p>
 <p>Authentication is performed by verifying the user PIN. Note that this piece of information is sensitive and must be handled accordingly in the application. PIN verification is done with a single step</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// pin is the user PIN as a string of 6 digits</span>
-<span class="token keyword">try</span> <span class="token punctuation">{</span>
+<span class="token keyword">try</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   cmdSet<span class="token punctuation">.</span><span class="token function">verifyPIN</span><span class="token punctuation">(</span>pin<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkAuthOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>WrongPINException e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>WrongPINException e<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Number of remaining attempts: "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span><span class="token function">getRetryAttempts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <p>if the PIN is wrong, you will receive an error SW in the format 0x63CX where X is the number of attempts remaining. When the number of remaining attempts is 0, the card is blocked. The user must then enter the PUK and a new PIN to restore access to the card. The maximum number of retries for the PUK is 5. To simplify things, the <code>APDUResponse.checkAuthOK()</code> method can be used to verify if the authentication was correct, and if not throw a <code>WrongPINException</code> which contains the number of remaining attempts.</p>
-<pre class=" language-java"><code class="language-java">cmdSet<span class="token punctuation">.</span><span class="token function">unblockPIN</span><span class="token punctuation">(</span>puk<span class="token punctuation">,</span> newPIN<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkAuthOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-java"><code class="language-java">cmdSet<span class="token punctuation">.</span><span class="token function">unblockPIN</span><span class="token punctuation">(</span>puk<span class="token punctuation">,</span> newPIN<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkAuthOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="Changing-credentials"><a href="#Changing-credentials" class="headerlink" title="Changing credentials"></a>Changing credentials</h2><p>All credentials of the Keycard can be changed (PIN, PUK, pairing password). Changing the pairing password does not invalidate existing pairings, but applies to the ones which can be created in the future. Changing credentials, requires user authentication.</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// Changes the user PIN</span>
 cmdSet<span class="token punctuation">.</span><span class="token function">changePIN</span><span class="token punctuation">(</span><span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -362,7 +364,8 @@ cmdSet<span class="token punctuation">.</span><span class="token function">chang
 cmdSet<span class="token punctuation">.</span><span class="token function">changePUK</span><span class="token punctuation">(</span><span class="token string">"123456123456"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// Changes the pairing password</span>
-cmdSet<span class="token punctuation">.</span><span class="token function">changePairingPassword</span><span class="token punctuation">(</span><span class="token string">"my pairing password"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+cmdSet<span class="token punctuation">.</span><span class="token function">changePairingPassword</span><span class="token punctuation">(</span><span class="token string">"my pairing password"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 
         </div>
       </div>
@@ -475,7 +478,7 @@ cmdSet<span class="token punctuation">.</span><span class="token function">chang
   </footer>
 </div>
   <script src="/javascripts/adparam.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <script>
   /*!

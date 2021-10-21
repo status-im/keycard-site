@@ -44,7 +44,7 @@
 
   <meta property="og:image" content="/img/share.png?v=0.0.5" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.4/styles/dracula.min.css">
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
 <body>
 
 
@@ -86,11 +86,11 @@
                 class="o-navigation__item ">
                 About
               </a>
-              <a href="https://news.keycard.tech" title="Blog"
+              <a target="_blank" rel="noopener" href="https://news.keycard.tech" title="Blog"
                 class="o-navigation__item">
                 Blog
               </a>
-              <a href="https://get.keycard.tech/" target="_blank" rel="noopener" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
+              <a target="_blank" rel="noopener" href="https://get.keycard.tech/" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
               <div class="o-navigation__item">
                 <ul class="o-list-row">
                   <li>
@@ -348,7 +348,8 @@
 <p>The use cases for this applet are burner wallets, payment cards (including prepaid ones). This applet can be installed alongside the main Keycard applet and does not interfere with it. As the name implies, the applet has roughly the same security level of cash in the pocket and should be used with this in mind. Security cen be enhanced by making the applet a signer to a smartcontract (instead of holding funds directly) and applying anti-fraud policies on the network.</p>
 <p>The SDK provides a separate command set to interact with this applet.</p>
 <h2 id="Instatiating-the-command-set"><a href="#Instatiating-the-command-set" class="headerlink" title="Instatiating the command set"></a>Instatiating the command set</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// cardChannel is our CardChannel instance</span>
-CashCommandSet cashCmdSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CashCommandSet</span><span class="token punctuation">(</span>cardChannel<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+CashCommandSet cashCmdSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CashCommandSet</span><span class="token punctuation">(</span>cardChannel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="Selecting-the-CashApplet"><a href="#Selecting-the-CashApplet" class="headerlink" title="Selecting the CashApplet"></a>Selecting the CashApplet</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// note that selecting the cash applet deselects the Keycard applet, so if you use both command sets make sure you invoke select every time you want to switch application</span>
 CashApplicationInfo info <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CashApplicationInfo</span><span class="token punctuation">(</span>cashCmdSet<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -359,10 +360,12 @@ info<span class="token punctuation">.</span><span class="token function">getPubK
 info<span class="token punctuation">.</span><span class="token function">getAppVersion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// Returns arbitrary data which has been set either at applet installation or through the STORE DATA command in the Keycard applet</span>
-info<span class="token punctuation">.</span><span class="token function">getPubData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+info<span class="token punctuation">.</span><span class="token function">getPubData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="Signing"><a href="#Signing" class="headerlink" title="Signing"></a>Signing</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// hash is the hash to sign, for example the Keccak-256 hash of an Ethereum transaction</span>
 <span class="token comment" spellcheck="true">// the signature object contains r, s, recId and the public key associated to this signature</span>
-RecoverableSignature signature <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RecoverableSignature</span><span class="token punctuation">(</span>hash<span class="token punctuation">,</span> cashCmdSet<span class="token punctuation">.</span><span class="token function">sign</span><span class="token punctuation">(</span>hash<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+RecoverableSignature signature <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RecoverableSignature</span><span class="token punctuation">(</span>hash<span class="token punctuation">,</span> cashCmdSet<span class="token punctuation">.</span><span class="token function">sign</span><span class="token punctuation">(</span>hash<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 
         </div>
       </div>
@@ -475,7 +478,7 @@ RecoverableSignature signature <span class="token operator">=</span> <span class
   </footer>
 </div>
   <script src="/javascripts/adparam.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <script>
   /*!

@@ -44,7 +44,7 @@
 
   <meta property="og:image" content="/img/share.png?v=0.0.5" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.4/styles/dracula.min.css">
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
 <body>
 
 
@@ -86,11 +86,11 @@
                 class="o-navigation__item ">
                 About
               </a>
-              <a href="https://news.keycard.tech" title="Blog"
+              <a target="_blank" rel="noopener" href="https://news.keycard.tech" title="Blog"
                 class="o-navigation__item">
                 Blog
               </a>
-              <a href="https://get.keycard.tech/" target="_blank" rel="noopener" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
+              <a target="_blank" rel="noopener" href="https://get.keycard.tech/" title="Get Keycard" class="o-navigation__item"><span class="a-button a-button--rounded">Get Keycard</span></a>
               <div class="o-navigation__item">
                 <ul class="o-list-row">
                   <li>
@@ -344,20 +344,23 @@
   
         </div>
         <div class="o-grid__column-1-1 o-grid__column-large-2-3">
-          <h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><p>You can import the SDK in your Gradle or Maven project using <a href="https://jitpack.io" target="_blank" rel="noopener">Jitpack.io</a>. If using Gradle, to use<br>JitPack all you have to do is insert these lines in you <code>build.gradle</code> file</p>
-<pre class=" language-groovy"><code class="language-groovy">allprojects <span class="token punctuation">{</span>
-  repositories <span class="token punctuation">{</span>
-    maven <span class="token punctuation">{</span> url <span class="token string">'https://jitpack.io'</span> <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+          <h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><p>You can import the SDK in your Gradle or Maven project using <a target="_blank" rel="noopener" href="https://jitpack.io/">Jitpack.io</a>. If using Gradle, to use<br>JitPack all you have to do is insert these lines in you <code>build.gradle</code> file</p>
+<pre class=" language-groovy"><code class="language-groovy">allprojects <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  repositories <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    maven <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> url <span class="token string">'https://jitpack.io'</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <p>Then, you must import the correct dependency. In case you are building an Android-based project, you need to add this line</p>
-<pre class=" language-groovy"><code class="language-groovy">dependencies <span class="token punctuation">{</span>
+<pre class=" language-groovy"><code class="language-groovy">dependencies <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   implementation <span class="token string">'com.github.status-im.status-keycard-java:android:3.0.2'</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <p>If you are working on the desktop, then you need this line instead</p>
-<pre class=" language-groovy"><code class="language-groovy">dependencies <span class="token punctuation">{</span>
+<pre class=" language-groovy"><code class="language-groovy">dependencies <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   implementation <span class="token string">'com.github.status-im.status-keycard-java:desktop:3.0.2'</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <p>In both case, you will have the same SDK, except for the way connection with the card is established.</p>
 
         </div>
@@ -471,7 +474,7 @@
   </footer>
 </div>
   <script src="/javascripts/adparam.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <script>
   /*!
