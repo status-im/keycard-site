@@ -11,7 +11,7 @@ pipeline {
   }
 
   environment {
-    DEV_HOST = 'jenkins@node-01.do-ams3.proxy.misc.statusim.net'
+    DEV_HOST = 'jenkins@node-01.do-ams3.sites.misc.statusim.net'
     GH_USER = 'status-im-auto'
     GH_MAIL = 'auto@status.im'
   }
