@@ -8,7 +8,7 @@
         - Keycard is 2FA - tap your Keycard to login to your Status account.
 
     - question: Is Keycard available with Status on Android and iOS?
-      text: Keycard is currently only available for Status on Android. The Keycard team is currently working on iOS integration.
+      text: Keycard is currently available for Status on Android and iOS. We are currently integrating keycard with Status Desktop.
     
     - question: How much does Keycard cost?
       text: Keycard costs 24.9€ Retail and can be purchased here - https://get.keycard.tech/
