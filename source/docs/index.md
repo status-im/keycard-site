@@ -15,7 +15,7 @@ To further simplify integration, we have developed a Java-based API which can be
 
 [Read the SDK documentation](sdk/installation.html)
 
-If you use a different language, please first refer to the [Java SDK](sdk/installation.html) documentation for a high level overview of how to perform different tasks with the Keycard. Then, please check the [protocol documentation](apdu.html) out for the low-level details.
+If you use a different language, please first refer to the [Java SDK](sdk/installation.html) documentation for a high level overview of how to perform different tasks with the Keycard. Then, please check the [protocol documentation](apdu) out for the low-level details.
 
 Since Keycard 3.0, besides the hardware wallet functionality, you find a second applet with a different purpouse and security model. This applet, internally called Cash applet, does not share any data with the wallet and provides a single keypair which can be used to sign any piece of information. Unlike the wallet applet, the cash applet does not require a PIN or SecureChannel and can be tapped on 3rd party terminal. This enable convenient in-person interactions at the expense of security. For this reason the keypair in the Cash applet should not hold any funds at all, but should instead be used in concert with smartcontracts in scenarios with lower security requirements. It is especially suited for signing EIP-712 formatted metatx. Some examples can include ticketing, small payments, etc. It is worth repeating that the Wallet and Cash applet, while living on the same card, do not share any data or key and are completely independent from each other. In order to easily integrate Keycard with any dApp, we defined a small extension to the [Web3 API](web3.html).
 
