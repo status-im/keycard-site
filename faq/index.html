@@ -365,6 +365,21 @@
           </div>
         </div>
       
+        <div class="c-accordion js-accordion o-distance-small">
+          <div class="c-accordion__header js-accordion-trigger">
+            <h3>Can I reinstall the Keycard applet (advanced users only)?</h3>
+            <svg class="c-accordion__arrow" width="24" height="27" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M23.6732 8.82242L22.6125 7.77828C22.3607 7.53043 21.9536 7.53043 21.7018 7.77828L12 17.3074L2.29821 7.77828C2.04642 7.53043 1.63928 7.53043 1.38749 7.77828L0.326779 8.82242C0.074993 9.07027 0.074993 9.47106 0.326779 9.71891L11.5446 20.7615C11.7964 21.0093 12.2036 21.0093 12.4554 20.7615L23.6732 9.71891C23.925 9.47106 23.925 9.07027 23.6732 8.82242Z" fill="#08D8BC"/>
+</svg>
+          </div>
+          <div class="c-accordion__body js-accordion-content">
+            
+            
+              If you’re an advanced user, or a developer, you might want to reinstall the Javacard applet on your Keycard. This will factory reset your card. You might want to do this if you’ve lost your PIN & PUK, or if your pairing slots on the card are all full. IMPORTANT: This operation will delete everything on your card. Do this at your own risk, and please make sure you have your 12 word mnemonic phrase stored somewhere else if you have an account on your card. There are several ways to do this. The best way is to have a USB contacted (not NFC) reader and a desktop computer. In that case use our CLI tool (https://github.com/status-im/keycard-cli/releases) or a 3rd party (opensource) GUI tool (https://github.com/choppu/keycard-desktop/releases) to reinstall the applet. If you only have an Android smartphone with NFC, you can use Keycard Connect (https://github.com/status-im/keycard-connect/releases) to do this. This is a dangerous operation and might destroy your card if connection is lost during the reinstallation. Make sure the card is firmly touching the phone and do not disconnect it until the “Tap your card” prompt doesn’t go away. On newer JCOP4 cards this takes less than a minute but on slower JCOP3 cards it can take several minutes. The applet itself, distributed as a standard Javacard cap file can be found here https://github.com/status-im/status-keycard/releases. You will need this regardless of the method you use to reinstall.
+            
+          </div>
+        </div>
+      
     
       <h2 class="a-title u-text-center o-distance-medium">Other questions</h2>
       
