@@ -24,7 +24,7 @@
     "hexo-renderer-scss": "^1.2.0",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^2.0.0",
-    "node-sass": "^6.0.1"
+    "node-sass": "^4.13.1"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0"
