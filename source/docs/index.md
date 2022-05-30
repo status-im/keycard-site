@@ -29,5 +29,5 @@ You are at the right place to find informations about Keycard and get you going.
 
 If you need more and want to discuss:
 - for live discussion and help, go to [Keycard Status channel](https://join.status.im/chat/public/status-keycard)
-- to check or raise issues/bugs/feature requests please do so in our [GitHub repos](https://status.im/keycard_api/resources.html)
+- to check or raise issues/bugs/feature requests please do so in our [GitHub repos](https://keycard.tech/docs/resources.html)
 - check our latest Keycard news on [Discuss](https://discuss.status.im/c/keycard)
