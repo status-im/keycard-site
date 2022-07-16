@@ -5,10 +5,10 @@
       list:
         - Keycard is a hardware wallet that integrates with Status. Secure your transactions by tapping your Keycard on your phone.
         - Keycard provides security and ownership. You control your private keys.
-        - Keycard is 2FA - tap your Keycard to login to your Status account.
+        - Keycard is 2FA - tap your Keycard to log in to your Status account.
 
     - question: Is Keycard available with Status on Android and iOS?
-      text: Keycard is currently available for Status on Android and iOS. We are currently integrating keycard with Status Desktop.
+      text: Keycard is currently available for Status on Android and iOS. We are currently integrating Keycard with Status Desktop.
 
     - question: How much does Keycard cost?
       text: Keycard costs 24.9€ Retail and can be purchased here - https://get.keycard.tech/
@@ -29,7 +29,7 @@
   title: Security
   list:
     - question: Are my funds safe if I lose my Keycard?
-      text: If you lose your keycard, your funds are safe. Your pairing code and 6 digit passcode are both required to access your funds from a phone that isn't paired with your Keycard. Your funds can be recovered using Status (or any other wallet) with your mnemonic phrase.
+      text: If you lose your Keycard, your funds are safe. Your pairing code and 6 digit passcode are both required to access your funds from a phone that isn't paired with your Keycard. Your funds can be recovered using Status (or any other wallet) with your mnemonic phrase.
 
     - question: How secure is Keycard?
       text: The included Keycard applet is open source, and has been audited by a third party security firm. The Keycard hardware is a SE secure element with a very high level of hardware protection. It passes CC EAL5+ formal testing for its security evaluation. Other applets (i.e. manually installed to the Keycard) may not be secure.
@@ -38,7 +38,7 @@
   title: Setup
   list:
     - question: How do I get going with Keycard and Status?
-      text: Download Status, generate keys or import a pre-existing wallet, and choose to store it on your Keycard. After, you will be asked to tap your Keycard and enter your PIN whenever you login to Status or sign a transaction.
+      text: Download Status, generate keys or import a pre-existing wallet, and choose to store it on your Keycard. After, you will be asked to tap your Keycard and enter your PIN whenever you log in to Status or sign a transaction.
 
     - question: What is the PIN?
       text: Your 6 digit PIN is chosen by you when you connect your Keycard to Status. You will have to enter the PIN when tapping your card, so remember it carefully (or save it in a password manager).
@@ -50,7 +50,7 @@
       text: Status accounts are generated with a master secret which can be represented with a list of words. When you generate a new Status account, you will be provided by this list of words. It is crucial that you write down this list of words somewhere safe. If you lose your Keycard, lose your PUK, or pairing code and phone, it’s the only way to recover your funds.
 
     - question: I already own a Status account and want to use it with my Keycard, how should I proceed?
-      text: from Status v1.11, logout from your account, and then select your account in the list, click '...', select 'Manage keys and storage' and then 'Move Keystore file', enter your seed and then select Keycard. From there, you will be guided to set-up your new keycard and your account will be migrated on it.
+      text: from Status v1.11, log out from your account, and then select your account in the list, click '...', select 'Manage keys and storage' and then 'Move Keystore file', enter your seed and then select Keycard. From there, you will be guided to set up your new Keycard and your account will be migrated on it.
 
     - question: Can I reinstall the Keycard applet (advanced users only)?
       text: "If you’re an advanced user, or a developer, you might want to reinstall the Javacard applet on your Keycard. This will factory reset your card. You might want to do this if you’ve lost your PIN & PUK, or if your pairing slots on the card are all full. IMPORTANT: This operation will delete everything on your card. Do this at your own risk, and please make sure you have your 12 word mnemonic phrase stored somewhere else if you have an account on your card. There are several ways to do this. The best way is to have a USB contacted (not NFC) reader and a desktop computer. In that case use our CLI tool (https://github.com/status-im/keycard-cli/releases) or a 3rd party (opensource) GUI tool (https://github.com/choppu/keycard-desktop/releases) to reinstall the applet. If you only have an Android smartphone with NFC, you can use Keycard Connect (https://github.com/status-im/keycard-connect/releases) to do this. This is a dangerous operation and might destroy your card if connection is lost during the reinstallation. Make sure the card is firmly touching the phone and do not disconnect it until the “Tap your card” prompt doesn’t go away. On newer JCOP4 cards this takes less than a minute but on slower JCOP3 cards it can take several minutes. The applet itself, distributed as a standard Javacard cap file can be found here https://github.com/status-im/status-keycard/releases. You will need this regardless of the method you use to reinstall."
@@ -59,7 +59,7 @@
   title: Other questions
   list:
     - question: I own one Keycard, can I use it with several phones, or several applications concurrently?
-      text: Yes. Your pairing code can enable you to set-up 5 secure connections.
+      text: Yes. Your pairing code can enable you to set up 5 secure connections.
 
     - question: I lost my PIN, what should I do?
       text: If you get your PIN incorrect more than 3 times, you will have to enter your PUK to reset and change your PIN.
@@ -70,11 +70,11 @@
     - question: I lost my pairing code, what should I do?
       text: Make sure your mnemonic words are stored somewhere safe and secure. Without a pairing code, your mnemonic phrase is required to recover your funds if you lose your phone.
 
-    - question: My keycard pairing slots are full, what should I do?
+    - question: My Keycard pairing slots are full, what should I do?
       text: Your Keycard can only be paired with 5 devices. If your Keycard is paired with Keycard Connect (https://github.com/status-im/keycard-connect/releases), you can unpair the devices. If your Keycard is not paired with Keycard Connect, you will have to reinstall the applet to unpair devices. Note that this will factory reset your Keycard, and is a sensitive operation. See "Can I reinstall the Keycard applet (advanced users only)?" for details. For developers, see the documentation of the unpairing command here - https://keycard.tech/docs/apdu/unpair.html
 
     - question: I lost my mnemonic phrase, what should I do?
       text: If you lost your mnemonic phrase for your current account, you should immediately create a new wallet with a new mnemonic phrase and transfer your assets from your current account to it. Your mnemonic phrase is required to recover your funds if you lose your Keycard or your PUK/pairing code.
 
-    - question: I lost my keycard, what should I do?
-      text: If you lose your keycard, your funds are safe. Your pairing code and 6 digit passcode are both required to access your funds from a phone that isn't paired with your Keycard. Your funds can be recovered using Status (or any other wallet) with your mnemonic phrase.
+    - question: I lost my Keycard, what should I do?
+      text: If you lose your Keycard, your funds are safe. Your pairing code and 6 digit passcode are both required to access your funds from a phone that isn't paired with your Keycard. Your funds can be recovered using Status (or any other wallet) with your mnemonic phrase.
