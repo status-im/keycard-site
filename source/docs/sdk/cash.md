@@ -7,7 +7,7 @@ title: Java SDK
 
 Since version 3.0 the Keycard package also includes a Cash applet. When installed, the applet immediately generates a keypair which cannot be changed, exported or be used for derivation. The applet only responds to the SELECT and SIGN commands and has no concept of PIN or SecureChannel. All in all, it is a very basic version of the main Keycard applet. This applet is completely separate from the Wallet applet and they do not share any key.
 
-The use cases for this applet are burner wallets, payment cards (including prepaid ones). This applet can be installed alongside the main Keycard applet and does not interfere with it. As the name implies, the applet has roughly the same security level of cash in the pocket and should be used with this in mind. Security cen be enhanced by making the applet a signer to a smartcontract (instead of holding funds directly) and applying anti-fraud policies on the network.
+The use cases for this applet are burner wallets, payment cards (including prepaid ones). This applet can be installed alongside the main Keycard applet and does not interfere with it. As the name implies, the applet has roughly the same security level of cash in the pocket and should be used with this in mind. Security can be enhanced by making the applet a signer to a smartcontract (instead of holding funds directly) and applying anti-fraud policies on the network.
 
 The SDK provides a separate command set to interact with this applet.
 
