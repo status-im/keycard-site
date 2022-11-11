@@ -5,6 +5,13 @@ title: Protocol
 
 # Changelog
 
+## Version 3.1
+* Added IDENT command to Keycard an Cash applet
+* Added Ident applet
+* Added ability to export the extended public key
+* Added duress PIN
+* The INIT command now optionally accepts the max number of PIN, PUK retries and the duress PIN
+
 ## Version 3.0
 * **BREAKING** Removed the DUPLICATE KEY command
 * **BREAKING** Removed SET NDEF command (replaced by STORE DATA)

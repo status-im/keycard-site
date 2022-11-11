@@ -23,13 +23,15 @@ P1:
 P2:
 0x00 = private and public key
 0x01 = public key only
+0x02 = extended public key
   
 Response Data format:
 - Tag 0xA1 = keypair template
-  - Tag 0x80 = ECC public key component (could be omitted)
+  - Tag 0x80 = ECC public key component (omitted if P2=0x00)
   - Tag 0x81 = ECC private key component (if P2=0x00)
+  - Tag 0x82 = Chain code (if P2=0x02)
   
-This command exports the requested public and private key. The public key can be always exported (P2=0x01), but the private key (P2=0x00) can be exported if and only if the requested key path is in the [EIP-1581](https://eips.ethereum.org/EIPS/eip-1581) subtree. 
+This command exports the requested public and private key. The public key can be always exported (P2=0x01), but the private key (P2=0x00) can be exported if and only if the requested key path is in the [EIP-1581](https://eips.ethereum.org/EIPS/eip-1581) subtree. The extended public key (P2=0x02) can be exported for any path except those in the EIP-1581 subtree.
 
 The P1 parameter indicates how to the derive the desired key. P1 = 0x00 indicates that the current key must be exported, and no derivation will be performed. P1 = 0x01 derives the path given in the data field without changing the current path of the card. P1 = 0x02 derives the path but also changes the current path of the card. The source for derivation can be set by OR'ing P1 with the constants defined in the DERIVE KEY command. This allows deriving from master, parent or current.
 

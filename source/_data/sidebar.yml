@@ -43,6 +43,8 @@ docs:
             path: select.html
           - title: INIT
             path: init.html
+          - title: IDENT
+            path: ident.html            
           - title: OPEN SECURE CHANNEL
             path: opensecurechannel.html
           - title: MUTUALLY AUTHENTICATE

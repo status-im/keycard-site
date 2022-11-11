@@ -9,7 +9,7 @@ This document describes all APDUs part of the Keycard APDU protocol. Any impleme
 
 ## Version
 
-This documentation is at version 3.0.
+This documentation reflects version 3.1 of the applet.
  
 ## Conventions
 

@@ -18,6 +18,8 @@ This command is only available when the applet is in pre-initialized state and s
 The client must take the public key received after the SELECT command, generate a random keypair and perform EC-DH to generate an AES key. It must then generate a random IV and encrypt the payload using AES-CBC with ISO/IEC 9797-1 Method 2 padding.
 
 They payload is the concatenation of the PIN (6 digits/bytes), PUK (12 digits/bytes) and, if the Secure Channel capability is implemented, pairing secret (32 bytes).
+Additionally, since version 3.1 of the applet, the max number of PIN attempts (1 byte), the max number of PUK attempts (1 bytes) and a duress PIN (6 digits/bytes) can be specified.
+If these are not specified, the default values will be respectively, 3, 5 and the first half of the PUK.
 
 This scheme guarantees protection against passive MITM attacks. Since the applet has no "owner" before the execution of this command, protection against active MITM cannot be provided at this stage. However since the communication happens locally (either through NFC or contacted interface) the realization of such an attack at this point is unrealistic.
 
