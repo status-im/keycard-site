@@ -21,7 +21,7 @@ Since Keycard 3.0, besides the hardware wallet functionality, you find a second 
 
 ## Versioning
 
-The current version of the applet is 3.0. This documentation applies to said version. [Semantic versioning](https://semver.org) is used throughout the project, with the omission of the patch number for the applet, but not the SDK and related tools. The version of all components of the Keycard project are tied to the protocol version.
+The current version of the applet is 3.1. This documentation applies to said version. [Semantic versioning](https://semver.org) is used throughout the project, with the omission of the patch number for the applet, but not the SDK and related tools. The version of all components of the Keycard project are tied to the protocol version.
 
 ## Get in touch
 

@@ -15,8 +15,9 @@ Here you find the links to all repositories and tools related to Keycard develop
 * [Swift SDK](https://github.com/status-im/Keycard.swift)
 * [Keycard on Ledger](https://github.com/status-im/keycard-ledger)
 * [React Native library](https://github.com/status-im/react-native-status-keycard)
+* [Go Status library](https://github.com/status-im/status-keycard-go)
 
 ## Tools
 
 * [Keycard CLI](https://github.com/status-im/keycard-cli)
-* [Keycard Connect](https://github.com/status-im/keycard-connect)
+* [Keycard Desktop](https://github.com/choppu/keycard-desktop)

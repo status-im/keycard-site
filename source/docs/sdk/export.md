@@ -12,10 +12,10 @@ Sorry for the long title, but let's make it immediately clear: the keys used to 
 
 ```java
 // Exports the current public key. This is allowed for any key path
-BIP32KeyPair publicKey = BIP32KeyPair.fromTLV(cmdSet.exportCurrentKey(true).checkOK().getData());
+BIP32KeyPair publicKey = BIP32KeyPair.fromTLV(cmdSet.exportCurrentKey(KeycardCommandSet.EXPORT_KEY_P2_PUBLIC_ONLY).checkOK().getData());
 
 // Exports the entire key pair. This is only allowed for key path following the EIP-1581 definition
-BIP32KeyPair keypair = BIP32KeyPair.fromTLV(cmdSet.exportCurrentKey(false).checkOK().getData());
+BIP32KeyPair keypair = BIP32KeyPair.fromTLV(cmdSet.exportCurrentKey(KeycardCommandSet.EXPORT_KEY_P2_PRIVATE_AND_PUBLIC).checkOK().getData());
 ```
 
 ## Derive & export
@@ -25,13 +25,13 @@ The export command is very powerful, since it allows you to derive & export a ke
 A very convenient use case is deriving an account key and retrieving the public key in one step. This is faster than doing it with two commands (derive key and export public), because every command processed has some overhead. Example
 
 ```java
-// The first parameter is the keypath, the second tells whether that you want to make the derived & exported key active
+// The first parameter is the keypath, the second tells whether that you want to make the derived & exported key current
 // and the third tells that you only want the public key to be exported.
-BIP32KeyPair publicKey = BIP32KeyPair.fromTLV(cmdSet.exportKey("m/44'/0'/0'/0/0", true, true).checkOK().getData());
+BIP32KeyPair publicKey = BIP32KeyPair.fromTLV(cmdSet.exportKey("m/44'/0'/0'/0/0", true, KeycardCommandSet.EXPORT_KEY_P2_PUBLIC_ONLY).checkOK().getData());
 
 // The line above is equivalent to
 // cmdSet.deriveKey("m/44'/0'/0'/0/0").checkOK();
-// BIP32KeyPair publicKey = BIP32KeyPair.fromTLV(cmdSet.exportCurrentKey(true).checkOK().getData());
+// BIP32KeyPair publicKey = BIP32KeyPair.fromTLV(cmdSet.exportCurrentKey(KeycardCommandSet.EXPORT_KEY_P2_PUBLIC_ONLY).checkOK().getData());
 ```
 
 Another use case, is to export keys defined by EIP-1581 without changing the current active key, since you won't be signing with the exported key using the card
@@ -44,4 +44,10 @@ Another use case, is to export keys defined by EIP-1581 without changing the cur
 BIP32KeyPair keypair = BIP32KeyPair.fromTLV(cmdSet.exportKey("m/43'/60'/1581'/0'/0", false, false).checkOK().getData());
 
 // At this point, the current active path would still be "m/44'/0'/0'/0/0"
+```
+
+For non EIP-1581 paths you can also export the extended public key, including the chain code. This allows, for non-hardened keys, to derive child public keys.
+
+```java
+BIP32KeyPair keypair = BIP32KeyPair.fromTLV(cmdSet.exportKey("m/44'/0'/0'/0", false, KeycardCommandSet.EXPORT_KEY_P2_EXTENDED_PUBLIC).checkOK().getData());
 ```

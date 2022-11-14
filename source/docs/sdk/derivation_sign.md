@@ -9,9 +9,9 @@ Signing is the main goal of the Keycard and indeed any hardware wallet. The Keyc
 
 ## Key derivation
 
-As mentioned before, the Keycard is a BIP32 compatible wallet. This means that it can perform key derivation as defined by the BIP32 specification in order to create a hierarchical deterministic wallet. When deriving a key, this key becomes active. The active key is persisted across sessions, meaning that a power loss or applet reselection does not reset it.
+As mentioned before, the Keycard is a BIP32 compatible wallet. This means that it can perform key derivation as defined by the BIP32 specification in order to create a hierarchical deterministic wallet. When deriving a key, this key becomes active.
 
-When creating or importing a wallet to the Keycard, the active key is the master key. Unless you imported a non-BIP32 compatible wallet, you usually want to set the active key to a currency account by following the BIP44 specifications for paths. Note that the maximum depth of the key path is 10, excluding the master key.
+When creating or importing a wallet to the Keycard, the active key is the master key. Note that the maximum depth of the key path is 10, excluding the master key.
 
 Key derivation requires user authentication
 
@@ -21,24 +21,11 @@ Since a line of code is worth a thousand words, below is an example of deriving 
 cmdSet.deriveKey("m/44'/0'/0'/0/0").checkOK();
 ```
 
-Since deriving a key is an expensive operation, you usually want to know what the current path is before performing derivation. You can do this with
+You can also read the current active path with with
 
 ```java
 // you can then get is as a string with currentPath.toString()
 KeyPath currentPath = new KeyPath(cmdSet.getStatus(KeycardCommandSet.GET_STATUS_P1_KEY_PATH).checkOK().getData());
-```
-
-To speed up operations, key derivation can be started not only from the master key, but also from the parent or the current key. The path in this case starts respectively with "../" and "./". You cannot navigate the hierarchy with multiple ".." in the paths, because only the direct parent of the current key is cached. Derivation from parent is especially convenient when switching between accounts of the same type. Example
-
-```java
-// Derive the main account
-cmdSet.deriveKey("m/44'/0'/0'/0/0").checkOK();
-
-// switch a secondary account, equivalent to "m/44'/0'/0'/0/1" but much faster
-cmdSet.deriveKey("../1").checkOK();
-
-// you can switch back and forth between siblings without limitations.
-cmdSet.deriveKey("../0").checkOK();
 ```
 
 ## Signing
@@ -65,3 +52,5 @@ Since version 2.2 of the Keycard API, it is possible to combine derivation and s
 APDUResponse resp = cmdSet.signWithPath(hash, "m/44'/0'/0'/0/0", false);
 RecoverableSignature signature = new RecoverableSignature(hash, resp.checkOK().getData());
 ```
+
+this method of signing is now actually the recommended method since it does not rely on existing card state.

@@ -68,3 +68,9 @@ if (!info.isInitializedCard()) {
   cmdSet.init(pin, puk, pairingPassword).checkOK();
 }
 ```
+
+Since applet version 3.1 you can also specify the number of retries for PIN/PUK and a duress PIN
+
+```java
+cmdSet.init(pin, puk, pairingPassword, 3, 5, duressPin).checkOK();
+```

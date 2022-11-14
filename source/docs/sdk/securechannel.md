@@ -7,6 +7,18 @@ title: Java SDK
 
 Communication with the card happens over a Secure Channel to protect sensitive information being transmitted. The Secure Channel relies on a pairing mechanism for mutual authentication.
 
+## Verifying card genuinity
+Although this step is optional, it is highly recommended to verify that the applet on card is genuine. It is necessary to do this only once before pairing with the card. You can do this with
+
+```java
+// challenge is a random 256-bit (32-bytes) challenge
+byte[] authData = cmdSet.identifyCard(challenge).checkOK().getData();
+// returns null if invalid or the public key of the signing authority/
+byte[] pubKey = Certificate.verifyIdentity(challenge, authData);
+```
+
+You must verify that the public key returned by ```Certificate.verifyIdentity``` is that of a certification authority you trust.
+
 ## Pairing
 
 Clients wishing to communicate with the card, need to pair with it first. This allows creating secure channels resistant not only to passive but also to active MITM attacks. Although pairing allows the card and the client to authenticate each other, the card does not grant access to any operation with the wallet until the user is authenticated (by verifying its PIN). To establish the pairing, the client needs to know the pairing password. After it is established, the pairing info (not the password) must be stored as securely as possible on the client for subsequent sessions. You should store the pairing information together with the instance UID to simplify handling of multiple cards.
