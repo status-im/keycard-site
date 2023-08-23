@@ -2,12 +2,12 @@
 <html lang="en" dir="ltr">
   <head>
   <meta charset="UTF-8">
-  <title>Java SDK | Keycard - Secure, Contactless, Open Source, Crypto Hardwallet</title>
+  <title>Protocol | Keycard - Secure, Contactless, Open Source, Crypto Hardwallet</title>
   <meta name="description" content="Keycard is a new type of smartcard built with an open API for simple integration with crypto wallets and hardware. Designed to safely send, store, and receive cryptocurrencies in a seamless contactless experience.">
-  <meta http-equiv="X-UA-CompatibleJava SDK | Keycard - Secure, Contactless, Open Source, Crypto Hardwallet" content="IE=Edge,chrome=1">
+  <meta http-equiv="X-UA-CompatibleProtocol | Keycard - Secure, Contactless, Open Source, Crypto Hardwallet" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://keycard.tech/docs/sdk/authentication.html">
+  <link rel="canonical" href="http://keycard.tech/docs/apdu/ident.html">
 
   <!-- Icon -->
   <meta name="msapplication-TileColor" content="#080E1A">
@@ -162,7 +162,7 @@
         
       </li>
 
-      <li class="c-side-navigation__item is-active">
+      <li class="c-side-navigation__item ">
         <a href="/docs/sdk" class="c-side-navigation__item__anchor">Java SDK</a>
         
         <ul class="c-side-navigation__item__tree">
@@ -187,7 +187,7 @@
         
       </li>
 
-      <li class="c-side-navigation__item is-active">
+      <li class="c-side-navigation__item ">
         <a href="/docs/sdk/authentication.html" class="c-side-navigation__item__anchor">Authentication</a>
         
       </li>
@@ -225,7 +225,7 @@
         
       </li>
 
-      <li class="c-side-navigation__item ">
+      <li class="c-side-navigation__item is-active">
         <a href="/docs/apdu" class="c-side-navigation__item__anchor">APDU API</a>
         
         <ul class="c-side-navigation__item__tree">
@@ -245,7 +245,7 @@
         
       </li>
 
-      <li class="c-side-navigation__item ">
+      <li class="c-side-navigation__item is-active">
         <a href="/docs/apdu/ident.html" class="c-side-navigation__item__anchor">IDENT</a>
         
       </li>
@@ -349,28 +349,30 @@
   
         </div>
         <div class="o-grid__column-1-1 o-grid__column-large-2-3">
-          <h1 id="User-authentication"><a href="#User-authentication" class="headerlink" title="User authentication"></a>User authentication</h1><p>Most operations with the card (all involving operations with the wallet or credentials) require authenticating the user. After authentication, the user remains authenticated until the card is powered off or the application is re-selected.</p>
-<p>Authentication is performed by verifying the user PIN. Note that this piece of information is sensitive and must be handled accordingly in the application. PIN verification is done with a single step</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// pin is the user PIN as a string of 6 digits</span>
-<span class="token keyword">try</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  cmdSet<span class="token punctuation">.</span><span class="token function">verifyPIN</span><span class="token punctuation">(</span>pin<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkAuthOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>WrongPINException e<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Number of remaining attempts: "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span><span class="token function">getRetryAttempts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<p>if the PIN is wrong, you will receive an error SW in the format 0x63CX where X is the number of attempts remaining. When the number of remaining attempts is 0, the card is blocked. The user must then enter the PUK and a new PIN to restore access to the card. The maximum number of retries for the PUK is 5. To simplify things, the <code>APDUResponse.checkAuthOK()</code> method can be used to verify if the authentication was correct, and if not throw a <code>WrongPINException</code> which contains the number of remaining attempts.</p>
-<pre class=" language-java"><code class="language-java">cmdSet<span class="token punctuation">.</span><span class="token function">unblockPIN</span><span class="token punctuation">(</span>puk<span class="token punctuation">,</span> newPIN<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkAuthOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h2 id="Changing-credentials"><a href="#Changing-credentials" class="headerlink" title="Changing credentials"></a>Changing credentials</h2><p>All credentials of the Keycard can be changed (PIN, PUK, pairing password). Changing the pairing password does not invalidate existing pairings, but applies to the ones which can be created in the future. Changing credentials, requires user authentication.</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// Changes the user PIN</span>
-cmdSet<span class="token punctuation">.</span><span class="token function">changePIN</span><span class="token punctuation">(</span><span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">// Changes the PUK</span>
-cmdSet<span class="token punctuation">.</span><span class="token function">changePUK</span><span class="token punctuation">(</span><span class="token string">"123456123456"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">// Changes the pairing password</span>
-cmdSet<span class="token punctuation">.</span><span class="token function">changePairingPassword</span><span class="token punctuation">(</span><span class="token string">"my pairing password"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+          <h1 id="IDENT"><a href="#IDENT" class="headerlink" title="IDENT"></a>IDENT</h1><ul>
+<li>CLA = 0x80</li>
+<li>INS = 0x14</li>
+<li>P1 = 0x00</li>
+<li>P2 = 0x00</li>
+<li>Data = a 256-bit random challenge</li>
+<li>Response Data = the challenge’s signature, followed by the card’s certificate</li>
+<li>Response SW = 0x9000 on success, 0x6A80 if the format is invalid.</li>
+</ul>
+<p>Response Data format:</p>
+<ul>
+<li>Tag 0xA0 = signature template<ul>
+<li>Tag 0x8A = Certificate</li>
+<li>Tag 0x30 = ECDSA Signature<ul>
+<li>Tag 0x02 = R value</li>
+<li>Tag 0x02 = S value</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Signs the given challenge using the card’s identification private key and returns the card certificate followed by the generated signature. The certificate is composed by the concatenation of the card’s identification public key in compressed form (33 bytes) and its signature r,s (32 bytes each) and recovery id (1 byte) generated by the certificate authority.</p>
+<p>This command does not require PIN authentication or a Secure Channel to be established. It is strongly recommended that the client performs this identification step before initializing the card and/or before pairing with it. After a card has been paired it is not necessary to repeat the identification step.</p>
+<p>To perform verification, first verify the challenge’s signature using public key in the certificate. If the signature is correct, recover the CA’s public key using the r,s, and recovery ID part of the certificate. If the public key matches that of a certificate authority you trust proceed to verify the signature, which has been calculated on the SHA-256 hash of the card’s identification public key in the form returned in the certificate.</p>
 
         </div>
       </div>

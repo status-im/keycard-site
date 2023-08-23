@@ -246,6 +246,11 @@
       </li>
 
       <li class="c-side-navigation__item ">
+        <a href="/de/docs/apdu/ident.html" class="c-side-navigation__item__anchor">IDENT</a>
+        
+      </li>
+
+      <li class="c-side-navigation__item ">
         <a href="/de/docs/apdu/opensecurechannel.html" class="c-side-navigation__item__anchor">OPEN SECURE CHANNEL</a>
         
       </li>
@@ -355,7 +360,7 @@
 </ul>
 <p>This command is only available when the applet is in pre-initialized state and successful execution brings the applet in the initialized state. This command is needed to allow securely storing secrets on the applet at a different moment and place than installation is taking place. Currently these are the PIN, PUK and pairing password.</p>
 <p>The client must take the public key received after the SELECT command, generate a random keypair and perform EC-DH to generate an AES key. It must then generate a random IV and encrypt the payload using AES-CBC with ISO/IEC 9797-1 Method 2 padding.</p>
-<p>They payload is the concatenation of the PIN (6 digits/bytes), PUK (12 digits/bytes) and, if the Secure Channel capability is implemented, pairing secret (32 bytes).</p>
+<p>They payload is the concatenation of the PIN (6 digits/bytes), PUK (12 digits/bytes) and, if the Secure Channel capability is implemented, pairing secret (32 bytes).<br>Additionally, since version 3.1 of the applet, the max number of PIN attempts (1 byte), the max number of PUK attempts (1 bytes) and a duress PIN (6 digits/bytes) can be specified.<br>If these are not specified, the default values will be respectively, 3, 5 and the first half of the PUK.</p>
 <p>This scheme guarantees protection against passive MITM attacks. Since the applet has no “owner” before the execution of this command, protection against active MITM cannot be provided at this stage. However since the communication happens locally (either through NFC or contacted interface) the realization of such an attack at this point is unrealistic.</p>
 <p>After successful execution, this command cannot be executed anymore. The regular SecureChannel (with pairing) is active and PIN and PUK are initialized.</p>
 

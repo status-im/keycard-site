@@ -246,6 +246,11 @@
       </li>
 
       <li class="c-side-navigation__item ">
+        <a href="/docs/apdu/ident.html" class="c-side-navigation__item__anchor">IDENT</a>
+        
+      </li>
+
+      <li class="c-side-navigation__item ">
         <a href="/docs/apdu/opensecurechannel.html" class="c-side-navigation__item__anchor">OPEN SECURE CHANNEL</a>
         
       </li>
@@ -345,6 +350,13 @@
         </div>
         <div class="o-grid__column-1-1 o-grid__column-large-2-3">
           <h1 id="Secure-Channel"><a href="#Secure-Channel" class="headerlink" title="Secure Channel"></a>Secure Channel</h1><p>Communication with the card happens over a Secure Channel to protect sensitive information being transmitted. The Secure Channel relies on a pairing mechanism for mutual authentication.</p>
+<h2 id="Verifying-card-genuinity"><a href="#Verifying-card-genuinity" class="headerlink" title="Verifying card genuinity"></a>Verifying card genuinity</h2><p>Although this step is optional, it is highly recommended to verify that the applet on card is genuine. It is necessary to do this only once before pairing with the card. You can do this with</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// challenge is a random 256-bit (32-bytes) challenge</span>
+<span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> authData <span class="token operator">=</span> cmdSet<span class="token punctuation">.</span><span class="token function">identifyCard</span><span class="token punctuation">(</span>challenge<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// returns null if invalid or the public key of the signing authority/</span>
+<span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> pubKey <span class="token operator">=</span> Certificate<span class="token punctuation">.</span><span class="token function">verifyIdentity</span><span class="token punctuation">(</span>challenge<span class="token punctuation">,</span> authData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>You must verify that the public key returned by <code>Certificate.verifyIdentity</code> is that of a certification authority you trust.</p>
 <h2 id="Pairing"><a href="#Pairing" class="headerlink" title="Pairing"></a>Pairing</h2><p>Clients wishing to communicate with the card, need to pair with it first. This allows creating secure channels resistant not only to passive but also to active MITM attacks. Although pairing allows the card and the client to authenticate each other, the card does not grant access to any operation with the wallet until the user is authenticated (by verifying its PIN). To establish the pairing, the client needs to know the pairing password. After it is established, the pairing info (not the password) must be stored as securely as possible on the client for subsequent sessions. You should store the pairing information together with the instance UID to simplify handling of multiple cards.</p>
 <p>Only 5 clients can be paired at once, but it is possible to unpair previously paired clients.</p>
 <p>Using the SDK, pairing is a simple operation</p>

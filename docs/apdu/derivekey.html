@@ -246,6 +246,11 @@
       </li>
 
       <li class="c-side-navigation__item ">
+        <a href="/docs/apdu/ident.html" class="c-side-navigation__item__anchor">IDENT</a>
+        
+      </li>
+
+      <li class="c-side-navigation__item ">
         <a href="/docs/apdu/opensecurechannel.html" class="c-side-navigation__item__anchor">OPEN SECURE CHANNEL</a>
         
       </li>
@@ -350,11 +355,11 @@
 <li>P1 = derivation options</li>
 <li>P2 = 0x00</li>
 <li>Data = a sequence of 32-bit integers (most significant byte first). Empty if the master key must be used.</li>
-<li>Response SW = 0x9000 on success, 0x6A80 if the format is invalid, 0x6984 if one of the components in the path generates an invalid key, 0x6B00 if derivation from parent keys is selected but no valid parent key is cached.</li>
+<li>Response SW = 0x9000 on success, 0x6A80 if the format is invalid.</li>
 <li>Preconditions: Secure Channel must be opened, user PIN must be verified, an extended keyset must be loaded</li>
 </ul>
-<p>This command is used before a signing session to generate a private key according to the <a target="_blank" rel="noopener" href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a> specifications. This command always aborts open signing sessions, if any. The generated key is used for all subsequent SIGN sessions. The maximum depth of derivation from the master key is 10. Any attempt to get deeper results in 0x6A80 being returned. The BIP32 specifications define a few checks which must be performed on the derived keys. If these fail, the 0x6984 is returned and the invalid key is discarded. A client should perform a GET STATUS command to get the actual current key path and resume derivation using a different path.</p>
-<p>The ability to start derivation from the parent keys allows to more efficiently switch between children of the same key. Note however that only the immediate parent of the current key is cached so you cannot use this to go back in the hierarchy. If no valid parent key is available the status code 0x6B00 will be returned.</p>
+<p>This command sets the derivation path used for subsequent SIGN and EXPORT KEY commands without an explicit path. The maximum depth of derivation from the master key is 10. Any attempt to get deeper results in 0x6A80 being returned.</p>
+<p>Using this command is now discouraged. It is recommended to explicitly give the derivation path in each SIGN and EXPORT KEY command.</p>
 <p>P1:</p>
 <ul>
 <li>bit 0-5 = reserved</li>

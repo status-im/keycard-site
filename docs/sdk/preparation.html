@@ -246,6 +246,11 @@
       </li>
 
       <li class="c-side-navigation__item ">
+        <a href="/docs/apdu/ident.html" class="c-side-navigation__item__anchor">IDENT</a>
+        
+      </li>
+
+      <li class="c-side-navigation__item ">
         <a href="/docs/apdu/opensecurechannel.html" class="c-side-navigation__item__anchor">OPEN SECURE CHANNEL</a>
         
       </li>
@@ -389,6 +394,9 @@ info<span class="token punctuation">.</span><span class="token function">getKeyU
   <span class="token comment" spellcheck="true">// All parameters are strings</span>
   cmdSet<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>pin<span class="token punctuation">,</span> puk<span class="token punctuation">,</span> pairingPassword<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Since applet version 3.1 you can also specify the number of retries for PIN/PUK and a duress PIN</p>
+<pre class=" language-java"><code class="language-java">cmdSet<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>pin<span class="token punctuation">,</span> puk<span class="token punctuation">,</span> pairingPassword<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> duressPin<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">checkOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 
         </div>
