@@ -9,6 +9,8 @@ Keycard provides to developer an hardware implementation of a [BIP-32](https://g
 
 Communication with the Keycard happens through a simple APDU interface, together with a Secure Channel guaranteeing confidentiality, authentication and integrity of all commands. It supports both NFC and ISO7816 physical interfaces, meaning that it is compatible with any Android phone equipped with NFC and all USB Smartcard readers.
 
+A feature added in version 3.1 of the applet is a duress PIN, which is completely transparent in the API and undetectable. It changes the keys generated during derivation in a deterministic way. Wallets should make sure they account for this by hiding balance and wallet address until proper authentication, and eventually be able to transparently switch to using the addresses generated after inserting the duress PIN.
+
 The most obvious case for integration of Keycard is crypto wallets (ETH, BTC, etc), however it can be used in other systems where a BIP-32 key tree is used and/or you perform authentication/identification.
 
 To further simplify integration, we have developed a Java-based API which can be used on both desktop and Android systems. On the desktop it uses the javax.smartcardio to interface with the card, which is compatible with most USB readers. On Android it uses the on-board NFC reader. If you develop in Java or any other language available, this is the easiest way to use the Keycard. You can also find a Go and Swift SDK and more resources [here](resources.html)
