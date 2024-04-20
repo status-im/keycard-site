@@ -17,7 +17,7 @@
       text: For now, Keycard is only a hardware wallet. It is part of our roadmap to introduce physical payments with Keycard as part of an open, inclusive and permissionless payment network where any phone running Status can act as a payment terminal.
 
     - question: How is Keycard different from other hardware wallets like Ledger or Trezor?
-      text: Keycard is build from the ground up as a mobile friendly hardware wallet. It uses contactless NFC technology to communicate with your phone, and sign transactions with a tap of the card. It's also convenient, lightweight, it fits in your wallet, pocket, phone case, practically anywhere. Keycard offers similar security to wallets like Ledger when used with trusted applications like Status.
+      text: Keycard is built from the ground up as a mobile friendly hardware wallet. It uses contactless NFC technology to communicate with your phone, and sign transactions with a tap of the card. It's also convenient, lightweight, it fits in your wallet, pocket, phone case, practically anywhere. Keycard offers similar security to wallets like Ledger when used with trusted applications like Status.
 
     - question: Is Keycard integrated with any other wallets?
       text: Not yet. However, developers can easily integrate with Keycard using the Open Source Keycard API available here - https://keycard.tech/docs/
