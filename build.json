@@ -1,0 +1,15 @@
+{
+    "timestamp": "2024-05-28T15:19:39Z",
+    "git": {
+        "commit": "11d77f932ee62c71a6020632595df850735cc2d1",
+        "branch": "origin/master",
+        "url": "git@github.com:status-im/keycard-site.git"
+    },
+    "build": {
+        "id": "74",
+        "number": "74",
+        "name": "website/keycard.tech",
+        "slave": "linux-01",
+        "url": "https://ci.infra.status.im/job/website/job/keycard.tech/74/"
+    }
+}
