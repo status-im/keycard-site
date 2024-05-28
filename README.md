@@ -13,3 +13,12 @@ Make sure you have node.js installed first.
 4. Run `hexo server`
 
 - [hexo server](https://hexo.io/docs/server.html)
+
+## CI/CD
+
+- [CI builds](https://ci.infra.status.im/job/website/job/keycard.tech/) `master` and pushes to `deploy-master` branch, which is hosted at <https://keycard.tech/>.
+- [CI builds](https://ci.infra.status.im/job/website/job/dev.keycard.tech/) `develop` and pushes to `deploy-develop` branch, which is hosted at <https://dev.keycard.tech/>.
+
+The hosting is done using [Caddy server with Git plugin for handling GitHub webhooks](https://github.com/status-im/infra-misc/blob/master/ansible/roles/caddy-git).
+
+Information about deployed build can be also found in `/build.json` available on the website.

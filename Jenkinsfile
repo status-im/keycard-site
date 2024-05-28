@@ -1,3 +1,6 @@
+#!/usr/bin/env groovy
+library 'status-jenkins-lib@v1.8.8'
+
 pipeline {
   agent { label 'linux' }
 
@@ -11,53 +14,39 @@ pipeline {
   }
 
   environment {
-    DEV_HOST = 'jenkins@node-01.do-ams3.sites.misc.statusim.net'
-    GH_USER = 'status-im-auto'
-    GH_MAIL = 'auto@status.im'
+    GIT_COMMITTER_NAME = 'status-im-auto'
+    GIT_COMMITTER_EMAIL = 'auto@status.im'
   }
 
   stages {
-    stage('Git Prep') {
-      steps {
-        sh "git config user.name ${env.GH_USER}"
-        sh "git config user.email ${env.GH_MAIL}"
-      }
-    }
-
-    stage('Install Deps') {
+    stage('Install') {
       steps {
         sh 'yarn install --ignore-optional'
       }
     }
 
     stage('Build') {
-      steps {
-        sh 'yarn run build'
-      }
+      steps { script {
+        sh 'yarn build'
+        jenkins.genBuildMetaJSON('public/build.json')
+      } }
     }
 
-    stage('Publish Prod') {
-      when { expression { GIT_BRANCH.endsWith("master") } }
+    stage('Publish') {
       steps {
-        withCredentials([string(
-          credentialsId: 'jenkins-github-token',
-          variable: 'GH_TOKEN',
-        )]) {
-          sh 'yarn run deploy'
+        sshagent(credentials: ['status-im-auto-ssh']) {
+          sh "ghp-import -b ${deployBranch()} -p public"
         }
       }
     }
 
-    stage('Publish Devel') {
-      when { expression { !GIT_BRANCH.endsWith("master") } }
-      steps {
-        sshagent(credentials: ['jenkins-ssh']) {
-          sh """
-            rsync -e 'ssh -o StrictHostKeyChecking=no' -r --delete \
-              public/* ${env.DEV_HOST}:/var/www/dev-keycard/
-          """
-        }
-      }
-    }
   }
+
+  post {
+    cleanup { cleanWs() }
+  }
+}
+
+def deployBranch() {
+  GIT_BRANCH ==~ /.*master/ ? 'deploy-master' : 'deploy-develop'
 }
