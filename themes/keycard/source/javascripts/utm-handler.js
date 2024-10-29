@@ -5,8 +5,6 @@ function storeUtmParams() {
     .toString()
     .match(/utm_[^=&]+=[^&]+/g)
 
-  console.log('utmParams', utmParams)
-
   if (utmParams) {
     sessionStorage.setItem('utmParams', JSON.stringify(utmParams))
   }
