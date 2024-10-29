@@ -25,6 +25,12 @@ const addAdIDToLinks = (id) => {
 }
 
 (function() {
+  /* https://github.com/status-im/keycard-site/issues/83 */
+  document.querySelectorAll('a[href="https://get.keycard.tech/"]').forEach(a=>{
+    let p=location.search.match(/utm_[^=&]+=[^&]+/g);
+    if(p) a.href+=(a.href.includes('?')?'&':'?')+p.join('&');
+  });
+  
   let id = getAdID()
   /* we modify links only if our parameter is set. */
   if (id == null) { return }
