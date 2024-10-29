@@ -6,6 +6,7 @@
     "version": "5.4.0"
   },
   "scripts": {
+    "start": "hexo server",
     "build": "hexo generate",
     "deploy": "node bin/deploy.js"
   },
