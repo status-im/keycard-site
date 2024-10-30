@@ -24,7 +24,7 @@ const addAdIDToLinks = (id) => {
   cleanList.forEach((element, idx) => setAdIDParam(id, element))
 }
 
-(function() {
+(function() {  
   let id = getAdID()
   /* we modify links only if our parameter is set. */
   if (id == null) { return }
